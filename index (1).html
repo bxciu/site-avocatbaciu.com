@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simona Maria Baciu – Avocat | Turda, Cluj</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-dark:   #003D2B;
+      --green-mid:    #004F38;
+      --gold:         #C9A86C;
+      --gold-light:   #E0C99A;
+      --brown-mid:    #7A5230;
+      --brown-light:  #A67C52;
+      --cream:        #F6F0E4;
+      --cream-dark:   #EDE4CF;
+      --cream-darker: #D9CDB5;
+      --white:        #FDFAF4;
+      --text-dark:    #1E2320;
+      --text-mid:     #3A3228;
+      --text-light:   #6B5E48;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: 'EB Garamond', Georgia, serif;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 1.75;
+      letter-spacing: 0.005em;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.72s cubic-bezier(.22,.61,.36,1), transform 0.72s cubic-bezier(.22,.61,.36,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left  { opacity: 0; transform: translateX(-34px); transition: opacity 0.7s cubic-bezier(.22,.61,.36,1), transform 0.7s cubic-bezier(.22,.61,.36,1); }
+    .reveal-left.visible  { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(34px);  transition: opacity 0.7s cubic-bezier(.22,.61,.36,1), transform 0.7s cubic-bezier(.22,.61,.36,1); }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.18s; }
+    .d3 { transition-delay: 0.30s; }
+    .d4 { transition-delay: 0.42s; }
+    .d5 { transition-delay: 0.54s; }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--green-dark);
+      border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 68px;
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--gold-light);
+      letter-spacing: 0.1em; text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+    .nav-links a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.92rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--cream-dark); text-decoration: none; transition: color 0.25s;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── MOBILE NAV TOGGLE ── */
+    .nav-toggle {
+      display: none;
+      background: transparent; border: 1px solid rgba(201,168,108,0.5);
+      width: 42px; height: 38px; cursor: pointer;
+      align-items: center; justify-content: center;
+      padding: 0;
+    }
+    .nav-toggle-bars { position: relative; width: 20px; height: 14px; }
+    .nav-toggle-bars span {
+      position: absolute; left: 0; right: 0; height: 1.5px;
+      background: var(--gold-light); transition: transform 0.3s, opacity 0.3s, top 0.3s;
+    }
+    .nav-toggle-bars span:nth-child(1) { top: 0; }
+    .nav-toggle-bars span:nth-child(2) { top: 6px; }
+    .nav-toggle-bars span:nth-child(3) { top: 12px; }
+    nav.open .nav-toggle-bars span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+    nav.open .nav-toggle-bars span:nth-child(2) { opacity: 0; }
+    nav.open .nav-toggle-bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh; background: var(--green-dark);
+      display: grid; grid-template-columns: 1fr 1fr;
+      position: relative; overflow: hidden; padding-top: 68px;
+    }
+    .hero-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image: repeating-linear-gradient(45deg, transparent, transparent 28px, rgba(201,168,108,0.04) 28px, rgba(201,168,108,0.04) 29px);
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem 4rem 5rem 6rem; position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem; letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.6rem;
+      font-weight: 600;
+      animation: fadeUp 0.7s ease both 0.2s;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 4.5vw, 4.2rem); font-weight: 700;
+      color: var(--white); line-height: 1.12; margin-bottom: 0.6rem;
+      animation: fadeUp 0.7s ease both 0.38s;
+    }
+    .hero-name em { font-style: italic; color: var(--gold-light); }
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; color: var(--cream); margin-bottom: 2.8rem; letter-spacing: 0.05em;
+      font-weight: 500;
+      animation: fadeUp 0.7s ease both 0.52s;
+    }
+    .hero-divider {
+      width: 72px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 2.4rem;
+      animation: fadeUp 0.7s ease both 0.62s;
+    }
+    .hero-stats { display: flex; gap: 3rem; animation: fadeUp 0.7s ease both 0.74s; }
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem; font-weight: 700; color: var(--gold); line-height: 1;
+    }
+    .hero-stat-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--cream-dark); margin-top: 0.4rem;
+      font-weight: 600;
+    }
+    .hero-right {
+      position: relative; display: flex; align-items: center; justify-content: center;
+      z-index: 2; padding: 4rem;
+      animation: fadeUp 0.9s ease both 0.5s;
+    }
+    .hero-mono { display: flex; flex-direction: column; align-items: center; gap: 1.8rem; }
+    .hero-mono-rule { width: 1px; height: 90px; background: linear-gradient(to bottom, transparent, var(--gold), transparent); }
+    .hero-mono-initials {
+      font-family: 'Playfair Display', serif;
+      font-size: 5.5rem; font-weight: 700; font-style: italic;
+      color: transparent; -webkit-text-stroke: 1px rgba(201,168,108,0.45);
+      letter-spacing: -0.04em; line-height: 1; user-select: none;
+    }
+    .hero-mono-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.74rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: rgba(201,168,108,0.78); text-align: center;
+      font-weight: 600; line-height: 1.7;
+    }
+
+    /* scroll cue */
+    .scroll-cue {
+      position: absolute; bottom: 2.6rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 0.55rem;
+      z-index: 10; cursor: pointer; text-decoration: none;
+      animation: fadeUp 1s ease both 1.3s;
+    }
+    .scroll-cue-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.72rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: rgba(201,168,108,0.85);
+      font-weight: 600;
+    }
+    .scroll-cue-arrow {
+      display: flex; flex-direction: column; align-items: center; gap: 0;
+    }
+    .scroll-cue-line {
+      width: 1px; height: 46px;
+      background: linear-gradient(to bottom, rgba(201,168,108,0.55), transparent);
+      animation: scrollPulse 1.9s ease-in-out infinite;
+    }
+    .scroll-cue-chevron {
+      width: 10px; height: 10px;
+      border-right: 1px solid rgba(201,168,108,0.5);
+      border-bottom: 1px solid rgba(201,168,108,0.5);
+      transform: rotate(45deg) translateY(-4px);
+      animation: scrollPulse 1.9s ease-in-out infinite 0.2s;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.6; transform: translateY(0) rotate(45deg); }
+      50%      { opacity: 1;   transform: translateY(5px) rotate(45deg); }
+    }
+    .scroll-cue-line { animation: linePulse 1.9s ease-in-out infinite; }
+    @keyframes linePulse {
+      0%,100% { opacity: 0.5; transform: scaleY(1); transform-origin: top; }
+      50%      { opacity: 1;   transform: scaleY(0.85); transform-origin: top; }
+    }
+
+    /* ── SECTIONS ── */
+    section { position: relative; }
+    .section-inner { max-width: 1080px; margin: 0 auto; padding: 6rem 2.5rem; }
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--brown-mid); margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 3vw, 2.7rem); font-weight: 700;
+      color: var(--green-dark); line-height: 1.2; margin-bottom: 1.2rem;
+    }
+    .section-rule { width: 60px; height: 2px; background: var(--gold); margin-bottom: 2.4rem; }
+
+    /* ── DESPRE ── */
+    #despre { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.45fr; gap: 5rem; align-items: start; }
+    .about-cards-col { display: flex; flex-direction: column; gap: 1.4rem; }
+    .about-card { background: var(--green-dark); padding: 2.2rem 2rem; position: relative; overflow: hidden; }
+    .about-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--brown-light));
+    }
+    .about-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--gold-light); margin-bottom: 0.6rem; font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .about-card-text { font-size: 0.95rem; color: var(--cream); line-height: 1.7; font-weight: 500; }
+    .about-text p { margin-bottom: 1.3rem; color: var(--text-mid); font-size: 1.02rem; font-weight: 500; }
+    .about-quote {
+      border-left: 3px solid var(--gold); padding: 0.95rem 1.5rem; margin: 2rem 0;
+      background: var(--cream); font-style: italic; color: var(--brown-mid); font-size: 1.06rem;
+      font-weight: 500; line-height: 1.7;
+    }
+
+    /* ── ACTIVITATE ── */
+    #activitate { background: var(--cream-dark); }
+    .activity-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; margin-top: 3rem; }
+    .activity-card {
+      background: var(--white); border-top: 3px solid var(--green-mid); padding: 2.4rem 2rem;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .activity-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,61,43,0.1); }
+    .activity-domain {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.55rem;
+      font-weight: 700;
+    }
+    .activity-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: var(--green-dark); margin-bottom: 0.8rem; font-weight: 700;
+    }
+    .activity-text { font-size: 0.96rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; font-weight: 500; }
+    .activity-list { list-style: none; }
+    .activity-list li {
+      font-size: 0.94rem; color: var(--text-mid); padding: 0.4rem 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex; align-items: baseline; gap: 0.65rem;
+      font-weight: 500; line-height: 1.5;
+    }
+    .activity-list li:last-child { border-bottom: none; }
+    .activity-list li::before {
+      content: ''; display: inline-block; width: 18px; height: 1px;
+      background: var(--gold); flex-shrink: 0; position: relative; top: -3px;
+    }
+
+    /* ── TIMELINE ── */
+    #parcurs { background: var(--white); }
+    .timeline { position: relative; padding-left: 3rem; margin-top: 3rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 8px; bottom: 8px; width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--green-mid), var(--brown-light));
+    }
+    .timeline-item { position: relative; padding-bottom: 3.2rem; }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-dot {
+      position: absolute; left: -3.42rem; top: 0.45rem;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.15rem;
+    }
+    .timeline-event { font-size: 1.08rem; color: var(--text-dark); font-weight: 600; margin-bottom: 0.35rem; }
+    .timeline-detail { font-size: 0.94rem; color: var(--text-mid); font-style: italic; max-width: 580px; font-weight: 500; line-height: 1.65; }
+
+    /* ── CIVIC ── */
+    #civic { background: var(--green-dark); color: var(--cream); }
+    #civic .section-label { color: var(--gold); }
+    #civic .section-title { color: var(--white); }
+    .civic-list { margin-top: 3.5rem; }
+    .civic-item {
+      display: grid; grid-template-columns: 1fr 1.8fr;
+      gap: 3rem; align-items: start;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(201,168,108,0.18);
+      transition: border-color 0.3s;
+    }
+    .civic-item:last-child { border-bottom: 1px solid rgba(201,168,108,0.18); }
+    .civic-item:hover { border-color: rgba(201,168,108,0.38); }
+    .civic-left { display: flex; flex-direction: column; gap: 0.3rem; }
+    .civic-org { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--gold-light); letter-spacing: 0.005em; }
+    .civic-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.76rem; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(224,201,154,0.9);
+      font-weight: 600;
+    }
+    .civic-desc { font-size: 0.97rem; color: var(--cream); line-height: 1.75; font-weight: 500; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--cream-dark); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; margin-top: 3rem; }
+    .contact-info-item { display: flex; align-items: flex-start; gap: 1.2rem; margin-bottom: 2rem; }
+    .contact-icon-wrap {
+      width: 40px; height: 40px; border: 1px solid var(--gold);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-icon-glyph { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold); font-style: italic; font-weight: 700; }
+    .contact-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brown-mid); margin-bottom: 0.3rem;
+      font-weight: 700;
+    }
+    .contact-value { font-size: 1rem; color: var(--text-dark); line-height: 1.7; font-weight: 500; }
+    .contact-value a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
+    .contact-value a:hover { color: var(--brown-mid); }
+    .contact-panel {
+      background: var(--green-dark); padding: 3rem 2.5rem; min-height: 280px;
+      display: flex; flex-direction: column; justify-content: center; gap: 1.4rem;
+      border-top: 3px solid var(--gold);
+    }
+    .contact-panel-heading { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-style: italic; color: var(--gold-light); font-weight: 600; }
+    .contact-panel-rule { width: 40px; height: 1px; background: var(--gold); }
+    .contact-panel-addr { font-size: 0.97rem; color: var(--cream); line-height: 1.85; font-weight: 500; }
+    .contact-panel-program {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.84rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text-dark); color: var(--cream-darker);
+      padding: 2.2rem 3rem; display: flex; align-items: center; justify-content: space-between;
+      border-top: 2px solid var(--gold);
+    }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--gold-light); font-weight: 600; letter-spacing: 0.01em; }
+    .footer-note { font-size: 0.85rem; color: var(--cream-darker); text-align: right; line-height: 1.7; font-weight: 500; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 860px) {
+      body { font-size: 17px; line-height: 1.7; }
+
+      /* ── NAV (mobile) ── */
+      nav { padding: 0 1.25rem; }
+      .nav-brand { font-size: 0.86rem; letter-spacing: 0.14em; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: flex; flex-direction: column; gap: 0;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: var(--green-dark);
+        border-bottom: 2px solid var(--gold);
+        padding: 0.6rem 0;
+        max-height: 0; overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+      }
+      nav.open .nav-links { max-height: 420px; padding: 1rem 0 1.2rem; }
+      .nav-links li { width: 100%; text-align: center; }
+      .nav-links a {
+        display: block; padding: 0.95rem 1.5rem;
+        font-size: 1rem; letter-spacing: 0.18em;
+        font-weight: 600;
+      }
+
+      /* ── HERO (mobile) ── */
+      #hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 68px;
+      }
+      .hero-left {
+        padding: 4rem 1.6rem 5rem;
+        text-align: center;
+        align-items: center;
+      }
+      .hero-eyebrow {
+        font-size: 0.74rem; letter-spacing: 0.22em;
+        margin-bottom: 1.4rem; max-width: 32ch;
+        font-weight: 700;
+      }
+      .hero-name {
+        font-size: clamp(2.4rem, 11vw, 3.4rem);
+        margin-bottom: 0.8rem;
+      }
+      .hero-subtitle {
+        font-size: 1.08rem; margin-bottom: 2.2rem;
+        font-weight: 500;
+      }
+      .hero-divider { margin: 0 auto 2rem; }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1rem;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+      }
+      .hero-stats > div { text-align: center; }
+      .hero-stat-num { font-size: clamp(1.6rem, 7vw, 2.1rem); }
+      .hero-stat-label {
+        font-size: 0.68rem; letter-spacing: 0.12em;
+        margin-top: 0.5rem; line-height: 1.45;
+        font-weight: 700;
+      }
+      .hero-right { display: none; }
+      .scroll-cue { display: none; }
+
+      /* ── SECTIONS (mobile) ── */
+      .section-inner { padding: 4rem 1.5rem; }
+      .section-title { font-size: clamp(1.7rem, 6vw, 2.2rem); }
+      .section-label { font-size: 0.74rem; letter-spacing: 0.22em; }
+
+      /* ── DESPRE (mobile) ── */
+      .about-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .about-card { padding: 1.8rem 1.6rem; }
+      .about-card-text { font-size: 0.97rem; }
+      .about-quote { padding: 0.95rem 1.2rem; font-size: 1rem; }
+
+      /* ── ACTIVITATE (mobile) ── */
+      .activity-grid { grid-template-columns: 1fr; gap: 1.4rem; margin-top: 2.4rem; }
+      .activity-card { padding: 2rem 1.6rem; }
+      .activity-domain { font-size: 0.72rem; letter-spacing: 0.18em; }
+      .activity-text { font-size: 0.98rem; }
+      .activity-list li { font-size: 0.96rem; padding: 0.5rem 0; }
+
+      /* ── TIMELINE (mobile) ── */
+      .timeline { padding-left: 2rem; margin-top: 2.4rem; }
+      .timeline-item { padding-bottom: 2.4rem; }
+      .timeline-dot { left: -2.42rem; }
+      .timeline-year { font-size: 1.18rem; }
+      .timeline-event { font-size: 1.02rem; }
+      .timeline-detail { font-size: 0.95rem; }
+
+      /* ── CIVIC (mobile) ── */
+      .civic-list { margin-top: 2.4rem; }
+      .civic-item {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding: 1.6rem 0;
+      }
+      .civic-role { font-size: 0.72rem; letter-spacing: 0.14em; }
+      .civic-desc { font-size: 0.98rem; }
+
+      /* ── CONTACT (mobile) ── */
+      .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; margin-top: 2.4rem; }
+      .contact-info-item { margin-bottom: 1.6rem; }
+      .contact-label { font-size: 0.72rem; letter-spacing: 0.16em; }
+      .contact-value { font-size: 1rem; }
+      .contact-panel { padding: 2.2rem 1.8rem; min-height: 0; }
+      .contact-panel-addr { font-size: 0.98rem; }
+
+      /* ── FOOTER (mobile) ── */
+      footer {
+        flex-direction: column; gap: 0.8rem;
+        padding: 1.8rem 1.5rem; text-align: center;
+      }
+      .footer-note { text-align: center; font-size: 0.86rem; }
+    }
+
+    @media (max-width: 420px) {
+      .hero-stats { gap: 0.6rem; }
+      .hero-stat-num { font-size: 1.55rem; }
+      .hero-stat-label { font-size: 0.64rem; letter-spacing: 0.1em; font-weight: 700; }
+      .hero-left { padding: 3.5rem 1.2rem 4rem; }
+      .section-inner { padding: 3.5rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-brand">Simona Maria Baciu</span>
+  <ul class="nav-links">
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#activitate">Activitate</a></li>
+    <li><a href="#parcurs">Parcurs</a></li>
+    <li><a href="#civic">Implicare</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false">
+    <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Cabinet Individual de Avocatura &nbsp;&middot;&nbsp; Baroul Cluj</p>
+    <h1 class="hero-name">Simona<br>Maria <em>Baciu</em></h1>
+    <p class="hero-subtitle">Avocat Definitiv &nbsp;&middot;&nbsp; Turda, jud. Cluj</p>
+    <div class="hero-divider"></div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">22+</div>
+        <div class="hero-stat-label">Ani de activitate</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2003</div>
+        <div class="hero-stat-label">Inscrisa in Barou</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Grade de jurisdictie</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-mono">
+      <div class="hero-mono-rule"></div>
+      <div class="hero-mono-initials">SMB</div>
+      <div class="hero-mono-label">Baroul Cluj<br>Membre din 2003</div>
+      <div class="hero-mono-rule"></div>
+    </div>
+  </div>
+  <a href="#despre" class="scroll-cue">
+    <span class="scroll-cue-text">Continua</span>
+    <div class="scroll-cue-arrow">
+      <span class="scroll-cue-line"></span>
+      <span class="scroll-cue-chevron"></span>
+    </div>
+  </a>
+</section>
+
+<!-- DESPRE -->
+<section id="despre">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label reveal">Profil profesional</p>
+        <h2 class="section-title reveal d1">O cariera construita pe principii</h2>
+        <div class="section-rule reveal d2"></div>
+        <p class="reveal d2">Simona Maria Baciu este avocat definitiv, membra a Baroului Cluj din data de <strong>1 martie 2003</strong>, cu drept de a sustine pledoarii in fata Judecatoriilor, Tribunalelor si Curtilor de Apel din Romania.</p>
+        <p class="reveal d3">Cabinetul Individual de Avocatura si-a desfasurat activitatea la sediul din <strong>Turda, Str. Avram Iancu nr. 7, ap. 1</strong>, o adresa bine-cunoscuta in comunitatea juridica locala din judetul Cluj.</p>
+        <div class="about-quote reveal d3">
+          „Dreptatea nu este un privilegiu — este fundamentul oricarei societati civilizate."
+        </div>
+        <p class="reveal d4">Pe parcursul a peste doua decenii, a reprezentat interesele clientilor cu profesionalism si dedicare, consolidand o reputatie solida in randul instantelor din judetul Cluj.</p>
+      </div>
+      <div class="about-cards-col">
+        <div class="about-card reveal reveal-right d2">
+          <div class="about-card-title">Baroul Cluj</div>
+          <div class="about-card-text">Membra a Baroului Cluj, organism profesional care reglementeaza exercitarea profesiei de avocat in judetul Cluj, cu standarde etice si deontologice ridicate.</div>
+        </div>
+        <div class="about-card reveal reveal-right d3">
+          <div class="about-card-title">Drept de pledoarie extins</div>
+          <div class="about-card-text">Drept de a pune concluzii la Judecatorii, Tribunale si Curti de Apel — toate cele trei grade de jurisdictie ordinara, garantand reprezentare juridica completa.</div>
+        </div>
+        <div class="about-card reveal reveal-right d4">
+          <div class="about-card-title">Cabinet Individual</div>
+          <div class="about-card-text">Titular al unui Cabinet Individual de Avocatura, forma de organizare care asigura relatia directa si personalizata cu fiecare client in parte.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITATE -->
+<section id="activitate">
+  <div class="section-inner">
+    <p class="section-label reveal">Domenii de practica</p>
+    <h2 class="section-title reveal d1">Arii de activitate juridica</h2>
+    <div class="section-rule reveal d2"></div>
+    <p class="reveal d2" style="color:var(--text-mid); max-width:640px;">Cabinetul a oferit consultanta si reprezentare juridica de inalta calitate, cu specializare in drept civil si drept comercial.</p>
+    <div class="activity-grid">
+      <div class="activity-card reveal d2">
+        <div class="activity-domain">Drept Civil</div>
+        <div class="activity-title">Succesiuni si Carte Funciara</div>
+        <div class="activity-text">Asistenta juridica completa in materia succesiunilor si a drepturilor reale imobiliare, cu expertiza in procedurile de carte funciara.</div>
+        <ul class="activity-list">
+          <li>Deschiderea si dezbaterea succesiunilor</li>
+          <li>Testamente si litigii succesorale</li>
+          <li>Intabulare si inscriere in cartea funciara</li>
+          <li>Rectificarea cartii funciare</li>
+          <li>Uzucapiunea si dobandirea dreptului de proprietate</li>
+          <li>Partaj judiciar si conventional</li>
+        </ul>
+      </div>
+      <div class="activity-card reveal d3">
+        <div class="activity-domain">Drept Comercial</div>
+        <div class="activity-title">Litigii si Tranzactii Comerciale</div>
+        <div class="activity-text">Reprezentare si consultanta pentru persoane juridice si comercianti, de la constituire si pana la solutionarea litigiilor comerciale.</div>
+        <ul class="activity-list">
+          <li>Constituirea si restructurarea societatilor</li>
+          <li>Redactarea contractelor comerciale</li>
+          <li>Litigii intre profesionisti</li>
+          <li>Recuperarea creantelor comerciale</li>
+          <li>Insolventele si procedurile de faliment</li>
+          <li>Consultanta in tranzactii si achizitii</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCURS -->
+<section id="parcurs">
+  <div class="section-inner">
+    <p class="section-label reveal">Biografie profesionala</p>
+    <h2 class="section-title reveal d1">Parcursul carierei</h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="timeline">
+      <div class="timeline-item reveal d1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2003</div>
+        <div class="timeline-event">Inscriere in Baroul Cluj</div>
+        <div class="timeline-detail">Dobandirea calitatii de avocat definitiv, titular in Cabinet Individual de Avocatura cu sediul in Turda, Str. Avram Iancu nr. 7, ap. 1.</div>
+      </div>
+      <div class="timeline-item reveal d2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2003 – prezent</div>
+        <div class="timeline-event">Cabinet Individual de Avocatura – Turda</div>
+        <div class="timeline-detail">Practica constanta in drept civil (succesiuni, carte funciara) si drept comercial, cu reprezentare la toate gradele de jurisdictie ordinara din judetul Cluj.</div>
+      </div>
+      <div class="timeline-item reveal d3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Nov. 2014 – Mar. 2019</div>
+        <div class="timeline-event">Director General – SC Turda Salina Durgau SA</div>
+        <div class="timeline-detail">Pe durata celor peste 4 ani de mandat, veniturile societatii au crescut de la 8,4 milioane lei la 22 milioane lei, iar profitul brut s-a multiplicat de zece ori — de la 739.549 lei la 7.735.268 lei.</div>
+      </div>
+      <div class="timeline-item reveal d4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Mai 2019</div>
+        <div class="timeline-event">Presedinte – Filiala Judeteana Cluj, Crucea Rosie Romana</div>
+        <div class="timeline-detail">Acceptarea rolului de conducere al filialei judetene Cluj a Crucii Rosii Romane, continuand implicarea civica alaturi de activitatea juridica.</div>
+      </div>
+      <div class="timeline-item reveal d5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">22+ ani</div>
+        <div class="timeline-event">Experienta acumulata</div>
+        <div class="timeline-detail">Doua decenii de practica juridica neintrerupta in judetul Cluj, cu reprezentare la Judecatoria Turda, Tribunalul Cluj si Curtea de Apel Cluj.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIVIC -->
+<section id="civic">
+  <div class="section-inner">
+    <p class="section-label reveal">Dincolo de sala de judecata</p>
+    <h2 class="section-title reveal d1">Implicare civica &amp; comunitara</h2>
+    <div class="section-rule reveal d2" style="background:var(--gold);"></div>
+    <p class="reveal d2" style="color:var(--cream-darker); max-width:600px; margin-bottom:0;">Angajamentul fata de comunitate nu s-a oprit la pragul tribunalului. Simona Maria Baciu a imbinat profesia juridica cu o prezenta activa in structuri civice de prestigiu.</p>
+    <div class="civic-list">
+      <div class="civic-item reveal d2">
+        <div class="civic-left">
+          <div class="civic-org">Crucea Rosie Romana</div>
+          <div class="civic-role">Presedinte &middot; Filiala Judeteana Cluj</div>
+        </div>
+        <div class="civic-desc">Din mai 2019 conduce filiala judeteana Cluj a Crucii Rosii Romane, coordonand activitatile umanitare si de voluntariat la nivelul intregului judet.</div>
+      </div>
+      <div class="civic-item reveal d3">
+        <div class="civic-left">
+          <div class="civic-org">Rotary Club Turda</div>
+          <div class="civic-role">Membra</div>
+        </div>
+        <div class="civic-desc">Participare activa in cadrul Rotary Club Turda, organizatie internationala dedicata liderilor comunitari ce promoveaza integritatea, prietenia si spiritul civic.</div>
+      </div>
+      <div class="civic-item reveal d4">
+        <div class="civic-left">
+          <div class="civic-org">Baroul Cluj</div>
+          <div class="civic-role">Membra Titular &middot; din 2003</div>
+        </div>
+        <div class="civic-desc">Implicare in viata profesionala a Baroului Cluj, organism care reuneste avocatii judetului si vegheaza la respectarea standardelor deontologice ale profesiei.</div>
+      </div>
+      <div class="civic-item reveal d5">
+        <div class="civic-left">
+          <div class="civic-org">Comunitatea Turdei</div>
+          <div class="civic-role">Turda, judetul Cluj</div>
+        </div>
+        <div class="civic-desc">Prezenta constanta in viata publica a municipiului Turda, contribuind prin expertiza juridica si angajament civic la bunastarea comunitatii locale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">Luati legatura</p>
+    <h2 class="section-title reveal d1">Date de contact</h2>
+    <div class="section-rule reveal d2"></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item reveal d2">
+          <div class="contact-icon-wrap"><span class="contact-icon-glyph">A</span></div>
+          <div>
+            <div class="contact-label">Adresa sediu</div>
+            <div class="contact-value">Str. Avram Iancu nr. 7, ap. 1<br>Turda, jud. Cluj, Romania</div>
+          </div>
+        </div>
+        <div class="contact-info-item reveal d3">
+          <div class="contact-icon-wrap"><span class="contact-icon-glyph">T</span></div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">
+              <a href="tel:0744476674">0744 476 674</a><br>
+              <a href="tel:0731707037">0731 707 037</a><br>
+              <a href="tel:0264316160">0264 316 160</a> (fax)
+            </div>
+          </div>
+        </div>
+        <div class="contact-info-item reveal d4">
+          <div class="contact-icon-wrap"><span class="contact-icon-glyph">E</span></div>
+          <div>
+            <div class="contact-label">E-mail</div>
+            <div class="contact-value"><a href="mailto:avocatbaciu@yahoo.com">avocatbaciu@yahoo.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item reveal d5">
+          <div class="contact-icon-wrap"><span class="contact-icon-glyph">B</span></div>
+          <div>
+            <div class="contact-label">Barou</div>
+            <div class="contact-value">Baroul Cluj &nbsp;·&nbsp; Membra din 01.03.2003</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-panel reveal reveal-right d2">
+        <div class="contact-panel-heading">Cabinet Individual de Avocatura</div>
+        <div class="contact-panel-rule"></div>
+        <div class="contact-panel-addr">
+          Simona Maria Baciu<br>
+          Str. Avram Iancu nr. 7, ap. 1<br>
+          Turda, jud. Cluj
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Simona Maria Baciu — Cabinet Individual de Avocatura</div>
+  <div class="footer-note">Baroul Cluj &nbsp;&middot;&nbsp; Turda, jud. Cluj, Romania<br>Membra din 01.03.2003</div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -36px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right')
+    .forEach(el => obs.observe(el));
+
+  const navEl = document.querySelector('nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const open = navEl.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navEl.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>
+</body>
+</html>

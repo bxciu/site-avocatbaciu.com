@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(claude mcp *)",
+      "Bash(npx add-skill *)",
+      "PowerShell(npx add-skill frontend-design)",
+      "Bash(claude plugin *)",
+      "Bash(claude plugins *)",
+      "Bash(npx --yes playwright --version)",
+      "PowerShell(npx --version)",
+      "PowerShell(node --version)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__list_connected_browsers",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

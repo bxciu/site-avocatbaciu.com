@@ -1,0 +1,2027 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Simona Maria Baciu — Cabinet Individual de Avocatură, Baroul Cluj. Drept civil, succesiuni, carte funciară, drept comercial. Turda, jud. Cluj." />
+<meta name="theme-color" content="#003D2B" />
+<meta property="og:title" content="Simona Maria Baciu — Avocat | Baroul Cluj" />
+<meta property="og:description" content="Cabinet Individual de Avocatură. Peste 22 de ani de practică în drept civil și comercial. Turda, jud. Cluj." />
+<meta property="og:type" content="website" />
+<title>Simona Maria Baciu — Avocat | Cabinet Individual de Avocatură, Baroul Cluj</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Attorney",
+  "name": "Simona Maria Baciu",
+  "description": "Cabinet Individual de Avocatură, membră a Baroului Cluj din 2003. Drept civil, succesiuni, carte funciară, drept comercial.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Str. Avram Iancu nr. 7, ap. 1",
+    "addressLocality": "Turda",
+    "addressRegion": "Cluj",
+    "addressCountry": "RO"
+  },
+  "telephone": ["+40744476674", "+40731707037"],
+  "email": "avocatbaciu@yahoo.com",
+  "areaServed": "Cluj County, Romania",
+  "memberOf": { "@type": "Organization", "name": "Baroul Cluj" }
+}
+</script>
+
+<style>
+  /* ================================================================
+     0. DESIGN TOKENS
+     ================================================================ */
+  :root {
+    /* Greens */
+    --green-deepest: #00261A;
+    --green-dark:    #003D2B;
+    --green-mid:     #004F38;
+    --green-glow:    rgba(0, 79, 56, 0.5);
+
+    /* Golds */
+    --gold-deep:     #A8843E;
+    --gold:          #C9A86C;
+    --gold-light:    #E0C99A;
+    --gold-pale:     #F0E2C2;
+
+    /* Browns */
+    --brown-mid:     #7A5230;
+    --brown-light:   #A67C52;
+
+    /* Creams / paper */
+    --cream:         #F6F0E4;
+    --cream-dark:    #EDE4CF;
+    --cream-darker:  #D9CDB5;
+    --paper:         #FBF6EA;
+    --white:         #FDFAF4;
+
+    /* Ink */
+    --ink:           #1a1612;
+    --text-dark:     #1E2320;
+    --text-mid:      #3A3228;
+    --text-light:    #6B5E48;
+
+    /* System */
+    --shadow-sm:     0 4px 14px rgba(0, 38, 26, 0.06);
+    --shadow-md:     0 14px 40px rgba(0, 38, 26, 0.10);
+    --shadow-lg:     0 30px 70px rgba(0, 38, 26, 0.14);
+    --shadow-gold:   0 18px 40px rgba(168, 132, 62, 0.18);
+
+    --ease-out:      cubic-bezier(.22, .61, .36, 1);
+    --ease-soft:     cubic-bezier(.16, 1, .3, 1);
+    --ease-spring:   cubic-bezier(.34, 1.56, .64, 1);
+
+    --r-sm: 0;     /* sharp corners read more editorial / legal */
+    --r-md: 2px;
+    --r-lg: 4px;
+
+    /* Spacing scale (8px) */
+    --s-1: 8px;  --s-2: 16px; --s-3: 24px; --s-4: 32px;
+    --s-5: 40px; --s-6: 48px; --s-7: 64px; --s-8: 80px;
+    --s-9: 96px; --s-10: 128px;
+
+    --nav-h: 72px;
+    --container: 1180px;
+  }
+
+  /* ================================================================
+     1. RESET & BASE
+     ================================================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    background: var(--cream);
+    color: var(--text-dark);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.72;
+    letter-spacing: 0.005em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern", "liga", "calt", "onum";
+  }
+
+  ::selection { background: var(--gold); color: var(--green-dark); }
+
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+  ul { list-style: none; }
+  img, svg { display: block; max-width: 100%; }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute; top: -100px; left: 1rem;
+    background: var(--green-dark); color: var(--gold-light);
+    padding: 0.6rem 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem;
+    z-index: 999; transition: top 0.2s;
+  }
+  .skip-link:focus { top: 0.6rem; }
+
+  /* Custom focus */
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* Grain overlay (very subtle, premium tactile feel on dark surfaces) */
+  .grain {
+    position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    opacity: 0.55; mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.78 0 0 0 0 0.66 0 0 0 0 0.42 0 0 0 0.16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  }
+
+  /* ================================================================
+     2. SCROLL PROGRESS
+     ================================================================ */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; height: 2px;
+    width: var(--p, 0%);
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+    z-index: 200;
+    transition: width 0.08s linear;
+  }
+
+  /* ================================================================
+     3. REVEAL SYSTEM
+     ================================================================ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 1.05s cubic-bezier(.22,.61,.28,1),
+      transform 1.05s cubic-bezier(.22,.61,.28,1);
+    will-change: opacity, transform;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-right { transform: translateX(20px); }
+  .reveal-right.visible { transform: translateX(0); }
+  .reveal-left  { transform: translateX(-20px); }
+  .reveal-left.visible { transform: translateX(0); }
+  .d1 { transition-delay: 0.08s; }
+  .d2 { transition-delay: 0.18s; }
+  .d3 { transition-delay: 0.30s; }
+  .d4 { transition-delay: 0.42s; }
+  .d5 { transition-delay: 0.54s; }
+  .d6 { transition-delay: 0.66s; }
+
+  /* Word reveal for hero name */
+  .word-reveal { display: inline-block; overflow: hidden; vertical-align: bottom; }
+  .word-reveal > span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform 1.05s var(--ease-soft);
+  }
+  .word-reveal.in > span { transform: translateY(0); }
+
+  /* Animated underline on inline links */
+  .ulink {
+    position: relative; display: inline-block;
+    background-image: linear-gradient(var(--gold), var(--gold));
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-soft), color 0.3s;
+  }
+  .ulink:hover, .ulink:focus-visible {
+    background-size: 100% 1px;
+    color: var(--gold);
+  }
+
+  /* ================================================================
+     4. NAVBAR
+     ================================================================ */
+  nav.site-nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(0, 38, 26, 0.86);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-bottom: 1px solid rgba(201, 168, 108, 0.22);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(1.25rem, 3vw, 3rem); height: var(--nav-h);
+    transition: transform 0.45s var(--ease-soft),
+                background 0.4s var(--ease-soft),
+                border-color 0.4s;
+  }
+  nav.site-nav.hidden { transform: translateY(-100%); }
+  nav.site-nav.solid {
+    background: rgba(0, 38, 26, 0.96);
+    border-color: rgba(201, 168, 108, 0.36);
+  }
+
+  .nav-brand {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; color: var(--gold-light);
+    letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600; transition: color 0.3s;
+  }
+  .nav-brand:hover { color: var(--gold); }
+  .nav-brand-mark {
+    width: 28px; height: 28px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1px solid rgba(201, 168, 108, 0.55);
+    font-style: italic; font-size: 0.78rem;
+    color: var(--gold);
+    letter-spacing: 0;
+  }
+
+  .nav-links { display: flex; gap: clamp(1.4rem, 2vw, 2.4rem); }
+  .nav-links a {
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-dark);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    transition: color 0.25s;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute; left: 0; right: 0; bottom: -2px;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s var(--ease-soft);
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold-light); }
+  .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+
+  .nav-cta {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.84rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 700;
+    color: var(--green-dark);
+    background: var(--gold-light);
+    padding: 0.7rem 1.2rem;
+    border: 1px solid var(--gold);
+    transition: background 0.35s, color 0.35s, transform 0.35s var(--ease-spring);
+  }
+  .nav-cta:hover {
+    background: var(--gold); color: var(--green-deepest);
+    transform: translateY(-1px);
+  }
+  .nav-cta-arrow {
+    width: 14px; height: 1px; background: currentColor; position: relative;
+    transition: width 0.35s var(--ease-out);
+  }
+  .nav-cta-arrow::after {
+    content: ''; position: absolute; right: -1px; top: -3px;
+    width: 7px; height: 7px;
+    border-right: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .nav-cta:hover .nav-cta-arrow { width: 22px; }
+
+  /* Mobile toggle */
+  .nav-toggle {
+    display: none;
+    width: 44px; height: 40px;
+    align-items: center; justify-content: center;
+    border: 1px solid rgba(201, 168, 108, 0.5);
+  }
+  .nav-toggle-bars { position: relative; width: 22px; height: 14px; }
+  .nav-toggle-bars span {
+    position: absolute; left: 0; right: 0; height: 1.5px;
+    background: var(--gold-light);
+    transition: transform 0.32s var(--ease-out), opacity 0.25s, top 0.32s var(--ease-out);
+  }
+  .nav-toggle-bars span:nth-child(1) { top: 0; }
+  .nav-toggle-bars span:nth-child(2) { top: 6px; }
+  .nav-toggle-bars span:nth-child(3) { top: 12px; }
+  nav.open .nav-toggle-bars span:nth-child(1) { top: 6px; transform: rotate(45deg); }
+  nav.open .nav-toggle-bars span:nth-child(2) { opacity: 0; }
+  nav.open .nav-toggle-bars span:nth-child(3) { top: 6px; transform: rotate(-45deg); }
+
+  /* ================================================================
+     5. HERO
+     ================================================================ */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    background: radial-gradient(120% 90% at 75% 30%, var(--green-mid) 0%, var(--green-dark) 45%, var(--green-deepest) 100%);
+    display: grid; grid-template-columns: 1.05fr 1fr;
+    overflow: hidden; padding-top: var(--nav-h);
+    color: var(--cream);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(45deg, transparent 0 30px, rgba(201,168,108,0.045) 30px 31px),
+      radial-gradient(circle at 75% 35%, rgba(201,168,108,0.10), transparent 55%);
+    pointer-events: none;
+  }
+  .hero-vignette {
+    position: absolute; inset: 0;
+    background: radial-gradient(75% 60% at 50% 95%, rgba(0, 24, 14, 0.6), transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    position: relative; z-index: 3;
+    padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 6rem);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  .hero-status {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    padding: 0.45rem 0.95rem;
+    border: 1px solid rgba(201, 168, 108, 0.38);
+    align-self: flex-start;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 1.6rem;
+    opacity: 0; transform: translateY(8px);
+    animation: fadeUp 0.8s var(--ease-soft) forwards 0.15s;
+  }
+  .hero-status-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold); position: relative;
+  }
+  .hero-status-dot::after {
+    content: ''; position: absolute; inset: -4px;
+    border-radius: 50%; background: var(--gold);
+    opacity: 0.4; animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(0.8); opacity: 0.4; }
+    50% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.84rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+    font-weight: 700;
+    opacity: 0; transform: translateY(10px);
+    animation: fadeUp 0.8s var(--ease-soft) forwards 0.3s;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5.4rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.0;
+    letter-spacing: -0.015em;
+    margin-bottom: 0.85rem;
+    text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25);
+  }
+  .hero-name em {
+    font-style: italic;
+    color: var(--gold-light);
+    font-weight: 700;
+    background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold) 65%, var(--gold-deep) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.05rem, 1.4vw, 1.3rem);
+    color: var(--cream);
+    margin-bottom: 2.4rem;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+    opacity: 0; transform: translateY(10px);
+    animation: fadeUp 0.8s var(--ease-soft) forwards 0.95s;
+  }
+  .hero-subtitle .sep { color: var(--gold); margin: 0 0.5em; }
+
+  .hero-divider {
+    width: 80px; height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 2.4rem;
+    opacity: 0; transform: scaleX(0); transform-origin: left;
+    animation: drawLine 1s var(--ease-soft) forwards 1.05s;
+  }
+  @keyframes drawLine {
+    to { opacity: 1; transform: scaleX(1); }
+  }
+
+  .hero-cta-row {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+    opacity: 0; transform: translateY(10px);
+    animation: fadeUp 0.8s var(--ease-soft) forwards 1.2s;
+  }
+
+  .btn {
+    --btn-bg: var(--gold);
+    --btn-fg: var(--green-deepest);
+    --btn-bd: var(--gold);
+    position: relative; overflow: hidden;
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.92rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700;
+    padding: 1rem 1.6rem;
+    color: var(--btn-fg); background: var(--btn-bg);
+    border: 1px solid var(--btn-bd);
+    transition: transform 0.35s var(--ease-spring), box-shadow 0.4s;
+  }
+  .btn::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
+    transform: translateX(-110%);
+    transition: transform 0.85s var(--ease-soft);
+  }
+  .btn:hover::before { transform: translateX(110%); }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+
+  .btn--ghost {
+    --btn-bg: transparent;
+    --btn-fg: var(--gold-light);
+    --btn-bd: rgba(201, 168, 108, 0.5);
+  }
+  .btn--ghost:hover {
+    --btn-fg: var(--cream);
+    --btn-bd: var(--gold);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
+  }
+
+  .btn-arrow {
+    width: 16px; height: 1px; background: currentColor; position: relative;
+    transition: width 0.4s var(--ease-out);
+  }
+  .btn-arrow::after {
+    content: ''; position: absolute; right: -1px; top: -3px;
+    width: 7px; height: 7px;
+    border-right: 1px solid currentColor;
+    border-top: 1px solid currentColor;
+    transform: rotate(45deg);
+  }
+  .btn:hover .btn-arrow { width: 26px; }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: end;
+    opacity: 0; transform: translateY(10px);
+    animation: fadeUp 0.8s var(--ease-soft) forwards 1.45s;
+  }
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.4vw, 2.9rem);
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-feature-settings: "lnum";
+  }
+  .hero-stat-num sup {
+    font-size: 0.55em; vertical-align: super; color: var(--gold-light);
+  }
+  .hero-stat-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--cream-dark); margin-top: 0.5rem;
+    font-weight: 600; line-height: 1.55;
+    max-width: 16ch;
+  }
+
+  /* HERO RIGHT — composed seal */
+  .hero-right {
+    position: relative; z-index: 2;
+    display: flex; align-items: center; justify-content: center;
+    padding: clamp(2rem, 5vw, 5rem);
+  }
+  .hero-seal {
+    position: relative;
+    width: min(440px, 78%);
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    animation: sealIn 1.4s var(--ease-soft) forwards 0.8s;
+  }
+  @keyframes sealIn {
+    from { opacity: 0; transform: scale(0.86) rotate(-4deg); }
+    to   { opacity: 1; transform: scale(1) rotate(0); }
+  }
+  .hero-seal-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%,
+                rgba(201, 168, 108, 0.15) 0%,
+                rgba(201, 168, 108, 0.06) 35%,
+                transparent 65%);
+    border-radius: 50%;
+    filter: blur(8px);
+  }
+  .hero-seal svg { width: 100%; height: 100%; position: relative; z-index: 2; }
+
+  .hero-seal .ring-rotate {
+    transform-origin: 250px 250px;
+    animation: rotate 60s linear infinite;
+  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  .hero-seal .seal-monogram {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-weight: 700;
+    font-size: 124px;
+    fill: url(#goldGrad);
+    letter-spacing: -8px;
+  }
+  .hero-seal .seal-anno {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 14px; letter-spacing: 6px;
+    fill: var(--gold-light);
+  }
+  .hero-seal .seal-circ-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 16px; letter-spacing: 8px;
+    fill: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  /* Scroll cue */
+  .scroll-cue {
+    position: absolute; bottom: 2.6rem; left: 50%; transform: translateX(-50%);
+    display: inline-flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    z-index: 10;
+    opacity: 0; animation: fadeUp 1s var(--ease-soft) forwards 1.8s;
+  }
+  .scroll-cue-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(224, 201, 154, 0.85); font-weight: 600;
+  }
+  .scroll-cue-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(to bottom, rgba(201,168,108,0.7), transparent);
+    transform-origin: top;
+    animation: scrollLine 2.2s var(--ease-soft) infinite;
+  }
+  @keyframes scrollLine {
+    0%   { transform: scaleY(0.2); opacity: 0; }
+    35%  { opacity: 1; }
+    100% { transform: scaleY(1); opacity: 0; }
+  }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    position: relative;
+    background: var(--green-deepest);
+    border-top: 1px solid rgba(201, 168, 108, 0.18);
+    border-bottom: 1px solid rgba(201, 168, 108, 0.18);
+    padding: 1.4rem clamp(1rem, 4vw, 4rem);
+    color: var(--gold-light);
+  }
+  .trust-strip-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .trust-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.74rem; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700;
+  }
+  .trust-list {
+    display: flex; gap: clamp(1.5rem, 3vw, 3rem); flex-wrap: wrap;
+    align-items: center;
+  }
+  .trust-list li {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.96rem; font-weight: 600;
+    color: var(--cream-dark);
+    position: relative;
+    padding: 0 0 1px;
+    transition: color 0.35s;
+  }
+  .trust-list li::after {
+    content: ''; position: absolute; left: 0; right: 0; bottom: -2px;
+    height: 1px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.5s var(--ease-soft);
+  }
+  .trust-list li:hover { color: var(--gold-light); }
+  .trust-list li:hover::after { transform: scaleX(1); }
+
+  /* ================================================================
+     6. SECTIONS — common
+     ================================================================ */
+  section { position: relative; }
+  .section-inner {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: clamp(4rem, 8vw, 7.5rem) clamp(1.5rem, 4vw, 3rem);
+    position: relative;
+  }
+
+  .section-label {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--brown-mid);
+    margin-bottom: 1rem; font-weight: 700;
+  }
+  .section-label::before {
+    content: ''; width: 24px; height: 1px;
+    background: var(--gold); display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.4rem;
+  }
+  .section-title em { color: var(--brown-mid); font-style: italic; }
+
+  .section-rule { width: 64px; height: 2px; background: var(--gold); margin-bottom: 2.4rem; }
+
+  /* ================================================================
+     7. DESPRE
+     ================================================================ */
+  #despre { background: var(--white); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .about-cards-col {
+    display: flex; flex-direction: column; gap: 1.2rem;
+    position: sticky; top: calc(var(--nav-h) + 2rem);
+  }
+
+  .about-card {
+    position: relative;
+    background: linear-gradient(160deg, var(--green-dark) 0%, var(--green-deepest) 100%);
+    padding: 2.1rem 1.9rem 2rem;
+    overflow: hidden;
+    transition: transform 0.5s var(--ease-soft), box-shadow 0.5s;
+  }
+  .about-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .about-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+  }
+  .about-card::after {
+    content: ''; position: absolute; bottom: -50%; right: -30%;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(201, 168, 108, 0.10), transparent 60%);
+    pointer-events: none; transition: transform 0.7s var(--ease-soft);
+  }
+  .about-card:hover::after { transform: translate(-15%, -15%); }
+  .about-card-num {
+    font-family: 'Playfair Display', serif;
+    font-style: italic; font-weight: 600;
+    font-size: 1.1rem; color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.7rem;
+  }
+  .about-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.12rem; color: var(--gold-light);
+    margin-bottom: 0.6rem; font-weight: 700;
+    letter-spacing: 0.005em;
+  }
+  .about-card-text {
+    font-size: 0.97rem; color: var(--cream); line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .about-text > p { margin-bottom: 1.3rem; color: var(--text-mid); font-size: 1.04rem; font-weight: 500; }
+  .about-text strong { color: var(--green-dark); font-weight: 700; }
+
+  .about-quote {
+    position: relative;
+    border-left: 2px solid var(--gold);
+    padding: 1.2rem 1.7rem;
+    margin: 2.2rem 0;
+    background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--brown-mid);
+    font-size: 1.18rem;
+    font-weight: 500;
+    line-height: 1.65;
+  }
+  .about-quote::before {
+    content: '“';
+    position: absolute; top: -8px; left: 0.9rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; color: var(--gold);
+    line-height: 1; opacity: 0.7;
+  }
+
+  /* ================================================================
+     8. ACTIVITATE
+     ================================================================ */
+  #activitate {
+    background:
+      linear-gradient(180deg, var(--cream-dark) 0%, var(--cream) 100%);
+  }
+  .activity-intro {
+    max-width: 660px;
+    color: var(--text-mid);
+    font-size: 1.06rem;
+    margin-bottom: 0;
+  }
+  .activity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.6rem;
+    margin-top: 3rem;
+  }
+  .activity-card {
+    position: relative;
+    background: var(--white);
+    padding: 2.4rem 2rem 2rem;
+    border: 1px solid rgba(122, 82, 48, 0.10);
+    overflow: hidden;
+    transition: transform 0.5s var(--ease-soft),
+                box-shadow 0.5s var(--ease-soft),
+                border-color 0.4s;
+  }
+  .activity-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--green-mid), var(--gold));
+    transform: scaleX(0.32); transform-origin: left;
+    transition: transform 0.6s var(--ease-soft);
+  }
+  .activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(201, 168, 108, 0.4);
+  }
+  .activity-card:hover::before { transform: scaleX(1); }
+
+  .activity-icon {
+    width: 44px; height: 44px;
+    color: var(--gold-deep);
+    margin-bottom: 1rem;
+  }
+  .activity-icon svg { width: 100%; height: 100%; stroke-width: 1.2; }
+
+  .activity-domain {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.5rem; font-weight: 700;
+  }
+  .activity-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.32rem; color: var(--green-dark);
+    margin-bottom: 0.8rem; font-weight: 700;
+    letter-spacing: -0.005em;
+  }
+  .activity-text {
+    font-size: 0.98rem; color: var(--text-mid);
+    line-height: 1.7; margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+  .activity-list li {
+    font-size: 0.95rem; color: var(--text-mid);
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(122, 82, 48, 0.10);
+    display: flex; align-items: baseline; gap: 0.7rem;
+    font-weight: 500; line-height: 1.55;
+    transition: color 0.3s;
+  }
+  .activity-list li:last-child { border-bottom: none; }
+  .activity-list li:hover { color: var(--green-dark); }
+  .activity-list li::before {
+    content: ''; display: inline-block;
+    width: 16px; height: 1px;
+    background: var(--gold); flex-shrink: 0;
+    position: relative; top: -3px;
+    transition: width 0.35s var(--ease-out), background 0.3s;
+  }
+  .activity-list li:hover::before { width: 26px; background: var(--gold-deep); }
+
+  /* ================================================================
+     9. PARCURS — TIMELINE
+     ================================================================ */
+  #parcurs { background: var(--white); }
+  .timeline {
+    position: relative; padding-left: clamp(2rem, 4vw, 3.5rem);
+    margin-top: 3rem;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 8px; bottom: 8px;
+    width: 1px;
+    background: linear-gradient(to bottom,
+                  var(--gold) 0%,
+                  var(--green-mid) 60%,
+                  var(--brown-light) 100%);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0.4rem 0 3rem;
+    transition: padding-left 0.45s var(--ease-soft);
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item:hover { padding-left: 0.6rem; }
+
+  .timeline-dot {
+    position: absolute;
+    left: calc(clamp(2rem, 4vw, 3.5rem) * -1 - 1px);
+    top: 0.85rem;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 4px var(--white), 0 0 0 5px rgba(201, 168, 108, 0.3);
+    transition: transform 0.4s var(--ease-spring), background 0.3s;
+  }
+  .timeline-item:hover .timeline-dot {
+    background: var(--gold);
+    transform: scale(1.18);
+  }
+
+  .timeline-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.34rem; font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.005em;
+  }
+  .timeline-event {
+    font-size: 1.1rem; color: var(--text-dark);
+    font-weight: 600; margin-bottom: 0.4rem;
+  }
+  .timeline-detail {
+    font-size: 0.96rem; color: var(--text-mid);
+    font-style: italic;
+    max-width: 600px; font-weight: 500;
+    line-height: 1.7;
+  }
+
+  /* ================================================================
+     9b. EDITORIAL TIMELINE
+     Premium minimal vertical flow. Thin centered rule, alternating
+     cards, soft shadow, calm reveal. 2D only — transform + opacity.
+     ================================================================ */
+  .flow {
+    position: relative;
+    margin: 3.5rem auto 0;
+    max-width: 1080px;
+  }
+
+  /* Hairline center rule, fading at both ends */
+  .flow::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0; bottom: 0;
+    width: 1px;
+    transform: translateX(-0.5px);
+    background: linear-gradient(to bottom,
+                  rgba(201,168,108,0) 0%,
+                  rgba(201,168,108,0.32) 10%,
+                  rgba(201,168,108,0.32) 90%,
+                  rgba(201,168,108,0) 100%);
+    pointer-events: none;
+  }
+
+  .flow-list {
+    list-style: none;
+    margin: 0; padding: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flow-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 56px 1fr;
+    align-items: center;
+    padding: 2.4rem 0;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 1.05s cubic-bezier(.22,.61,.28,1),
+                transform 1.05s cubic-bezier(.22,.61,.28,1);
+  }
+  .flow-item.in { opacity: 1; transform: translateY(0); }
+  .flow-item:first-child { padding-top: 0.6rem; }
+  .flow-item:last-child  { padding-bottom: 0.6rem; }
+
+  .flow-item[data-side="left"]  .flow-shift {
+    grid-column: 1;
+    justify-self: end;
+    padding-right: clamp(1.25rem, 2.5vw, 2.25rem);
+  }
+  .flow-item[data-side="right"] .flow-shift {
+    grid-column: 3;
+    justify-self: start;
+    padding-left: clamp(1.25rem, 2.5vw, 2.25rem);
+  }
+
+  /* Center node */
+  .flow-node {
+    grid-column: 2;
+    justify-self: center;
+    align-self: center;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1.5px solid var(--gold);
+    box-shadow: 0 0 0 4px var(--white);
+    transition: background 0.5s var(--ease-soft),
+                transform 0.55s var(--ease-soft);
+    z-index: 2;
+  }
+  .flow-item:hover .flow-node {
+    background: var(--gold);
+    transform: scale(1.2);
+  }
+
+  /* Cards — soft shadow, no border, calm hover lift */
+  .flow-card {
+    display: inline-block;
+    max-width: 460px;
+    padding: 1.5rem 1.7rem;
+    background: var(--white);
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(28,38,30,0.04),
+                0 8px 24px -10px rgba(28,38,30,0.10);
+    transition: transform 0.65s cubic-bezier(.22,.61,.28,1),
+                box-shadow 0.65s cubic-bezier(.22,.61,.28,1);
+    text-align: left;
+  }
+  .flow-item:hover .flow-card {
+    transform: translateY(-3px);
+    box-shadow: 0 1px 2px rgba(28,38,30,0.05),
+                0 16px 34px -12px rgba(28,38,30,0.14);
+  }
+
+  .flow-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.42rem;
+    font-weight: 700;
+    color: var(--green-dark);
+    letter-spacing: -0.005em;
+    line-height: 1.2;
+  }
+  .flow-event {
+    font-size: 1.04rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin-top: 0.55rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.4;
+  }
+  .flow-detail {
+    font-size: 0.94rem;
+    color: var(--text-mid);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.75;
+  }
+
+  /* Mobile: rule on the left, single column */
+  @media (max-width: 760px) {
+    .flow { margin-top: 2.4rem; }
+    .flow::before {
+      left: 14px;
+      transform: none;
+    }
+    .flow-item,
+    .flow-item[data-side="left"],
+    .flow-item[data-side="right"] {
+      display: block;
+      padding: 1.4rem 0 1.4rem 2.6rem;
+    }
+    .flow-item[data-side="left"]  .flow-shift,
+    .flow-item[data-side="right"] .flow-shift {
+      grid-column: auto;
+      justify-self: auto;
+      padding: 0;
+    }
+    .flow-card { max-width: 100%; padding: 1.25rem 1.35rem; }
+    .flow-node {
+      position: absolute;
+      left: 14px;
+      top: 1.85rem;
+      transform: translateX(-50%);
+      grid-column: auto;
+      justify-self: auto;
+      align-self: auto;
+    }
+    .flow-item:hover .flow-node {
+      transform: translateX(-50%) scale(1.2);
+    }
+
+    .flow-item {
+      transform: translateY(14px);
+      transition: opacity 1.35s cubic-bezier(.22,.61,.28,1),
+                  transform 1.35s cubic-bezier(.22,.61,.28,1);
+    }
+    .reveal,
+    .reveal-left,
+    .reveal-right {
+      transition:
+        opacity 1.35s cubic-bezier(.22,.61,.28,1),
+        transform 1.35s cubic-bezier(.22,.61,.28,1);
+    }
+    .reveal { transform: translateY(12px); }
+    .reveal-right { transform: translateX(14px); }
+    .reveal-left  { transform: translateX(-14px); }
+    .tx-reveal .tx-word {
+      transform: translateY(0.05em);
+      transition: opacity 1.25s cubic-bezier(.22,.61,.28,1),
+                  transform 1.25s cubic-bezier(.22,.61,.28,1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .flow-item, .flow-card, .flow-node { transition: none; }
+    .flow-item { opacity: 1; transform: none; }
+  }
+
+  /* ================================================================
+     10. CIVIC
+     ================================================================ */
+  #civic {
+    background:
+      radial-gradient(120% 100% at 30% 0%, var(--green-mid) 0%, var(--green-dark) 50%, var(--green-deepest) 100%);
+    color: var(--cream); position: relative; overflow: hidden;
+  }
+  #civic .section-label { color: var(--gold); }
+  #civic .section-label::before { background: var(--gold); }
+  #civic .section-title { color: var(--white); }
+  #civic .section-title em { color: var(--gold-light); }
+
+  .civic-intro { max-width: 600px; color: var(--cream-darker); margin-bottom: 0; }
+
+  .civic-list { margin-top: 3.4rem; }
+  .civic-item {
+    display: grid; grid-template-columns: 1.1fr 1.6fr;
+    gap: clamp(1.5rem, 3vw, 3rem); align-items: start;
+    padding: 1.9rem 0.4rem;
+    border-top: 1px solid rgba(201, 168, 108, 0.18);
+    transition: border-color 0.4s, padding-left 0.4s var(--ease-soft), background 0.4s;
+  }
+  .civic-item:last-child { border-bottom: 1px solid rgba(201, 168, 108, 0.18); }
+  .civic-item:hover {
+    border-color: rgba(201, 168, 108, 0.42);
+    padding-left: 1.1rem;
+    background: rgba(201, 168, 108, 0.04);
+  }
+  .civic-left { display: flex; flex-direction: column; gap: 0.35rem; }
+  .civic-org {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.18rem; font-weight: 700;
+    color: var(--gold-light); letter-spacing: 0.005em;
+    transition: color 0.3s;
+  }
+  .civic-item:hover .civic-org { color: var(--white); }
+  .civic-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(224, 201, 154, 0.9); font-weight: 600;
+  }
+  .civic-desc {
+    font-size: 0.99rem; color: var(--cream); line-height: 1.78;
+    font-weight: 500;
+  }
+
+  /* ================================================================
+     11. CONTACT
+     ================================================================ */
+  #contact { background: var(--cream-dark); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start; margin-top: 3rem;
+  }
+
+  .contact-info-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    margin-bottom: 1.9rem;
+    transition: transform 0.4s var(--ease-soft);
+  }
+  .contact-info-item:hover { transform: translateX(4px); }
+
+  .contact-icon-wrap {
+    width: 44px; height: 44px;
+    border: 1px solid var(--gold);
+    background: rgba(201, 168, 108, 0.10);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--gold-deep);
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+  }
+  .contact-info-item:hover .contact-icon-wrap {
+    background: var(--gold); color: var(--green-dark); border-color: var(--gold-deep);
+  }
+  .contact-icon-wrap svg { width: 18px; height: 18px; }
+
+  .contact-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--brown-mid);
+    margin-bottom: 0.3rem; font-weight: 700;
+  }
+  .contact-value { font-size: 1.02rem; color: var(--text-dark); line-height: 1.7; font-weight: 500; }
+  .contact-value a { color: var(--green-dark); font-weight: 600; }
+
+  .contact-panel {
+    position: relative;
+    background: linear-gradient(160deg, var(--green-mid) 0%, var(--green-dark) 60%, var(--green-deepest) 100%);
+    padding: 2.6rem 2.3rem;
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .contact-panel::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold), var(--gold-light));
+  }
+  .contact-panel::after {
+    content: ''; position: absolute; bottom: -60%; right: -40%;
+    width: 380px; height: 380px;
+    background: radial-gradient(circle, rgba(201,168,108,0.13), transparent 65%);
+    pointer-events: none;
+  }
+  .contact-panel-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.76rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700;
+    margin-bottom: 0.9rem;
+  }
+  .contact-panel-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.55rem; font-style: italic;
+    color: var(--gold-light); font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+  }
+  .contact-panel-rule { width: 40px; height: 1px; background: var(--gold); margin-bottom: 1.4rem; }
+  .contact-panel-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.08rem; font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+  .contact-panel-addr { font-size: 0.99rem; color: var(--cream); line-height: 1.85; font-weight: 500; }
+  .contact-panel-meta {
+    margin-top: 1.4rem; padding-top: 1.4rem;
+    border-top: 1px solid rgba(201, 168, 108, 0.22);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.84rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); font-weight: 600;
+  }
+  .contact-panel-cta {
+    margin-top: 1.6rem;
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    color: var(--gold-light); font-family: 'Cormorant Garamond', serif;
+    font-size: 0.84rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 700;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--gold);
+    transition: color 0.3s, gap 0.4s var(--ease-soft);
+  }
+  .contact-panel-cta:hover { color: var(--white); gap: 1.1rem; }
+
+  /* ================================================================
+     12. FOOTER
+     ================================================================ */
+  footer.site-footer {
+    background: var(--ink);
+    color: var(--cream-darker);
+    padding: 0;
+    border-top: 1px solid rgba(201, 168, 108, 0.18);
+    position: relative; overflow: hidden;
+  }
+  .footer-top {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 4vw, 3rem);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: start;
+  }
+  .footer-brand-block .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; color: var(--gold-light);
+    font-weight: 700; letter-spacing: 0.005em;
+    margin-bottom: 0.6rem;
+  }
+  .footer-brand-block .footer-brand-name em {
+    font-style: italic; color: var(--gold);
+  }
+  .footer-brand-block p {
+    font-size: 0.95rem; line-height: 1.75;
+    color: rgba(217, 205, 181, 0.78);
+    max-width: 36ch;
+  }
+  .footer-col-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.76rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700;
+    margin-bottom: 1.1rem;
+  }
+  .footer-list li { margin-bottom: 0.55rem; }
+  .footer-list a {
+    font-size: 0.97rem; color: rgba(217, 205, 181, 0.85);
+    transition: color 0.3s;
+  }
+  .footer-list a:hover { color: var(--gold-light); }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(201, 168, 108, 0.14);
+    padding: 1.4rem clamp(1.5rem, 4vw, 3rem);
+    max-width: var(--container);
+    margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 1rem; flex-wrap: wrap;
+  }
+  .footer-meta {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(217, 205, 181, 0.6); font-weight: 600;
+  }
+
+  /* ================================================================
+     13. KEYFRAMES & UTILITIES
+     ================================================================ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ================================================================
+     14. RESPONSIVE — TABLET (<= 1024)
+     ================================================================ */
+  @media (max-width: 1024px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-cards-col { position: static; flex-direction: row; flex-wrap: wrap; }
+    .about-cards-col > * { flex: 1 1 260px; }
+    .footer-top { grid-template-columns: 1.4fr 1fr; }
+    .footer-col--3 { grid-column: 1 / -1; }
+  }
+
+  /* ================================================================
+     15. RESPONSIVE — MOBILE (<= 860)
+     ================================================================ */
+  @media (max-width: 860px) {
+    body { font-size: 17px; line-height: 1.7; }
+
+    .nav-links {
+      position: absolute; top: var(--nav-h); left: 0; right: 0;
+      flex-direction: column; gap: 0; background: var(--green-deepest);
+      border-bottom: 1px solid rgba(201, 168, 108, 0.22);
+      max-height: 0; overflow: hidden; padding: 0;
+      transition: max-height 0.4s var(--ease-soft), padding 0.4s var(--ease-soft);
+    }
+    nav.open .nav-links {
+      max-height: 500px; padding: 0.8rem 0 1.2rem;
+    }
+    .nav-links li { width: 100%; text-align: center; opacity: 0; transform: translateY(-8px); }
+    nav.open .nav-links li {
+      opacity: 1; transform: translateY(0);
+      transition: opacity 0.45s var(--ease-soft), transform 0.45s var(--ease-soft);
+    }
+    nav.open .nav-links li:nth-child(1) { transition-delay: 0.08s; }
+    nav.open .nav-links li:nth-child(2) { transition-delay: 0.14s; }
+    nav.open .nav-links li:nth-child(3) { transition-delay: 0.20s; }
+    nav.open .nav-links li:nth-child(4) { transition-delay: 0.26s; }
+    nav.open .nav-links li:nth-child(5) { transition-delay: 0.32s; }
+    .nav-links a { display: block; padding: 0.95rem 1.5rem; font-size: 1rem; letter-spacing: 0.18em; }
+    .nav-cta { display: none; }
+    .nav-toggle { display: inline-flex; }
+
+    .hero-left { padding: 4rem 1.5rem 5rem; text-align: center; align-items: center; }
+    .hero-status, .hero-stats, .hero-divider, .hero-cta-row { align-self: center; }
+    .hero-divider { margin-left: auto; margin-right: auto; }
+    .hero-stats { grid-template-columns: repeat(3, 1fr); width: 100%; max-width: 420px; }
+    .hero-stats > div { text-align: center; }
+    .hero-cta-row { justify-content: center; }
+    .scroll-cue { display: none; }
+
+    .trust-strip-inner { justify-content: center; text-align: center; }
+    .trust-list { justify-content: center; gap: 1rem 1.6rem; }
+
+    .about-cards-col { flex-direction: column; }
+    .activity-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+    .timeline { padding-left: 2.2rem; }
+    .timeline-dot { left: -2.6rem; }
+    .civic-item { grid-template-columns: 1fr; gap: 0.7rem; padding: 1.6rem 0; }
+    .civic-item:hover { padding-left: 0.4rem; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    .footer-top { grid-template-columns: 1fr; }
+    .footer-col--3 { grid-column: auto; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-name { font-size: clamp(2.4rem, 12vw, 3.4rem); }
+    .hero-stats { gap: 0.7rem; }
+    .hero-stat-num { font-size: 1.7rem; }
+    .hero-stat-label { font-size: 0.66rem; letter-spacing: 0.12em; }
+    .btn { padding: 0.85rem 1.2rem; font-size: 0.82rem; letter-spacing: 0.18em; }
+  }
+
+  /* ================================================================
+     16. REDUCED MOTION
+     ================================================================ */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
+    .word-reveal > span { transform: none; }
+    .hero-seal .ring-rotate { animation: none; }
+  }
+
+  /* ================================================================
+     16b. TEXT REVEAL (word-by-word fast typewriter)
+     ================================================================ */
+  .tx-reveal { /* container — words inside are individually animated */ }
+  .tx-reveal .tx-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.06em);
+    transition: opacity 1s cubic-bezier(.22,.61,.28,1), transform 1s cubic-bezier(.22,.61,.28,1);
+    will-change: opacity, transform;
+  }
+  .tx-reveal.in .tx-word {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tx-reveal .tx-word { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ================================================================
+     17. PRINT
+     ================================================================ */
+  @media print {
+    nav, .scroll-cue, .scroll-progress, .nav-cta, .btn, .grain { display: none !important; }
+    body { background: white; color: black; }
+    section { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#despre" class="skip-link">Sari la conținut</a>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav" id="siteNav">
+  <a class="nav-brand" href="#hero">Simona Maria Baciu</a>
+  <ul class="nav-links">
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#activitate">Activitate</a></li>
+    <li><a href="#parcurs">Parcurs</a></li>
+    <li><a href="#civic">Implicare</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+  </button>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section id="hero">
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-left">
+    <p class="hero-eyebrow">Cabinet Individual de Avocatură &nbsp;&middot;&nbsp; Baroul Cluj</p>
+
+    <h1 class="hero-name">
+      <span class="word-reveal" data-d="0.05"><span>Simona</span></span><br>
+      <span class="word-reveal" data-d="0.18"><span>Maria&nbsp;</span></span><span class="word-reveal" data-d="0.30"><span><em>Baciu</em></span></span>
+    </h1>
+
+    <p class="hero-subtitle">
+      Avocat Definitiv <span class="sep">&middot;</span> Turda, jud. Cluj
+    </p>
+
+    <div class="hero-divider" aria-hidden="true"></div>
+
+    <div class="hero-cta-row">
+      <a class="btn" href="#contact">
+        Programare consultanță
+        <span class="btn-arrow" aria-hidden="true"></span>
+      </a>
+      <a class="btn btn--ghost" href="#activitate">
+        Domenii de practică
+        <span class="btn-arrow" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num"><span class="counter" data-target="22">0</span><sup>+</sup></div>
+        <div class="hero-stat-label">Ani de activitate</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="counter" data-target="2003">0</span></div>
+        <div class="hero-stat-label">Înscrisă în Barou</div>
+      </div>
+      <div>
+        <div class="hero-stat-num"><span class="counter" data-target="3">0</span></div>
+        <div class="hero-stat-label">Grade de jurisdicție</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right" aria-hidden="true">
+    <div class="hero-seal">
+      <div class="hero-seal-bg"></div>
+      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sigiliu Cabinet S.M.B.">
+        <defs>
+          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="#F0E2C2"/>
+            <stop offset="50%" stop-color="#C9A86C"/>
+            <stop offset="100%" stop-color="#A8843E"/>
+          </linearGradient>
+          <path id="circPath" d="M 250,250 m -195,0 a 195,195 0 1,1 390,0 a 195,195 0 1,1 -390,0"/>
+        </defs>
+
+        <!-- Outer rings -->
+        <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(201,168,108,0.28)" stroke-width="1"/>
+        <circle cx="250" cy="250" r="218" fill="none" stroke="rgba(201,168,108,0.45)" stroke-width="0.6"/>
+        <circle cx="250" cy="250" r="170" fill="none" stroke="rgba(201,168,108,0.36)" stroke-width="0.6"/>
+        <circle cx="250" cy="250" r="160" fill="none" stroke="rgba(201,168,108,0.18)" stroke-width="0.4"/>
+
+        <!-- Rotating circular text -->
+        <g class="ring-rotate">
+          <text class="seal-circ-text">
+            <textPath href="#circPath" startOffset="0" textLength="1225" lengthAdjust="spacing">JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS &#8226; JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS</textPath>
+          </text>
+        </g>
+
+        <!-- Corner ornaments -->
+        <g stroke="url(#goldGrad)" stroke-width="0.8" fill="none" opacity="0.85">
+          <path d="M 250 50 L 250 78 M 230 64 L 270 64"/>
+          <path d="M 250 450 L 250 422 M 230 436 L 270 436"/>
+          <path d="M 50 250 L 78 250 M 64 230 L 64 270"/>
+          <path d="M 450 250 L 422 250 M 436 230 L 436 270"/>
+        </g>
+
+        <!-- Center monogram -->
+        <text class="seal-monogram" x="250" y="285" text-anchor="middle">SMB</text>
+
+        <!-- Underline -->
+        <line x1="195" y1="320" x2="305" y2="320" stroke="url(#goldGrad)" stroke-width="0.8"/>
+
+        <!-- Tiny diamonds -->
+        <g fill="url(#goldGrad)" opacity="0.85">
+          <path d="M 184 320 l 4 -4 l 4 4 l -4 4 z"/>
+          <path d="M 308 320 l 4 -4 l 4 4 l -4 4 z"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <a href="#despre" class="scroll-cue" aria-label="Continuă">
+    <span class="scroll-cue-text">Continuă</span>
+    <span class="scroll-cue-line" aria-hidden="true"></span>
+  </a>
+</section>
+
+<!-- ============ DESPRE ============ -->
+<section id="despre">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-cards-col">
+        <article class="about-card reveal reveal-right d2">
+          <div class="about-card-num">I.</div>
+          <h3 class="about-card-title">Baroul Cluj</h3>
+          <p class="about-card-text">Membră a Baroului Cluj, organism profesional care reglementează exercitarea profesiei de avocat în județul Cluj, cu standarde etice și deontologice ridicate.</p>
+        </article>
+        <article class="about-card reveal reveal-right d3">
+          <div class="about-card-num">II.</div>
+          <h3 class="about-card-title">Drept de pledoarie extins</h3>
+          <p class="about-card-text">Drept de a pune concluzii la Judecătorii, Tribunale și Curți de Apel — toate cele trei grade de jurisdicție ordinară, garantând reprezentare juridică completă.</p>
+        </article>
+        <article class="about-card reveal reveal-right d4">
+          <div class="about-card-num">III.</div>
+          <h3 class="about-card-title">Cabinet Individual</h3>
+          <p class="about-card-text">Titular al unui Cabinet Individual de Avocatură, formă de organizare care asigură relația directă și personalizată cu fiecare client în parte.</p>
+        </article>
+      </div>
+
+      <div class="about-text">
+        <p class="section-label reveal">Profil profesional</p>
+        <h2 class="section-title reveal d1">O carieră construită pe <em>principii</em></h2>
+        <div class="section-rule reveal d2"></div>
+        <p class="reveal d2">Simona Maria Baciu este avocat definitiv, membră a Baroului Cluj din data de <strong>1 martie 2003</strong>, cu drept de a susține pledoarii în fața Judecătoriilor, Tribunalelor și Curților de Apel din România.</p>
+        <p class="reveal d3">Cabinetul Individual de Avocatură și-a desfășurat activitatea la sediul din <strong>Turda, Str. Avram Iancu nr. 7, ap. 1</strong>, o adresă bine cunoscută în comunitatea juridică locală din județul Cluj.</p>
+        <blockquote class="about-quote reveal d3">
+          Dreptatea nu este un privilegiu — este fundamentul oricărei societăți civilizate.
+        </blockquote>
+        <p class="reveal d4">Pe parcursul a peste două decenii, a reprezentat interesele clienților cu profesionalism și dedicare, consolidând o reputație solidă în rândul instanțelor din județul Cluj.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACTIVITATE ============ -->
+<section id="activitate">
+  <div class="section-inner">
+    <p class="section-label reveal">Domenii de practică</p>
+    <h2 class="section-title reveal d1">Arii de activitate <em>juridică</em></h2>
+    <div class="section-rule reveal d2"></div>
+    <p class="activity-intro reveal d2">Cabinetul a oferit consultanță și reprezentare juridică de înaltă calitate, cu specializare în drept civil și drept comercial.</p>
+
+    <div class="activity-grid">
+      <article class="activity-card reveal d2">
+        <div class="activity-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6v36"/>
+            <path d="M14 14h20"/>
+            <path d="M10 18 L6 30 a4 4 0 0 0 8 0 z"/>
+            <path d="M38 18 L34 30 a4 4 0 0 0 8 0 z"/>
+            <path d="M14 42h20"/>
+          </svg>
+        </div>
+        <div class="activity-domain">Drept Civil</div>
+        <h3 class="activity-title">Succesiuni și Carte Funciară</h3>
+        <p class="activity-text">Asistență juridică completă în materia succesiunilor și a drepturilor reale imobiliare, cu expertiză în procedurile de carte funciară.</p>
+        <ul class="activity-list">
+          <li>Deschiderea și dezbaterea succesiunilor</li>
+          <li>Testamente și litigii succesorale</li>
+          <li>Întăbulare și înscriere în cartea funciară</li>
+          <li>Rectificarea cărții funciare</li>
+          <li>Uzucapiunea și dobândirea dreptului de proprietate</li>
+          <li>Partaj judiciar și convențional</li>
+        </ul>
+      </article>
+
+      <article class="activity-card reveal d3">
+        <div class="activity-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="6" width="28" height="36"/>
+            <path d="M16 14h16 M16 22h16 M16 30h10"/>
+            <path d="M30 36 l4 4 l8 -8" opacity="0.7"/>
+          </svg>
+        </div>
+        <div class="activity-domain">Drept Comercial</div>
+        <h3 class="activity-title">Litigii și Tranzacții Comerciale</h3>
+        <p class="activity-text">Reprezentare și consultanță pentru persoane juridice și comercianți, de la constituire și până la soluționarea litigiilor comerciale.</p>
+        <ul class="activity-list">
+          <li>Constituirea și restructurarea societăților</li>
+          <li>Redactarea contractelor comerciale</li>
+          <li>Litigii între profesioniști</li>
+          <li>Recuperarea creanțelor comerciale</li>
+          <li>Insolvențele și procedurile de faliment</li>
+          <li>Consultanță în tranzacții și achiziții</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARCURS ============ -->
+<section id="parcurs">
+  <div class="section-inner">
+    <p class="section-label reveal">Biografie profesională</p>
+    <h2 class="section-title reveal d1">Parcursul <em>carierei</em></h2>
+    <div class="section-rule reveal d2"></div>
+
+    <div class="flow">
+      <ol class="flow-list">
+        <li class="flow-item" data-side="left">
+          <span class="flow-node" aria-hidden="true"></span>
+          <div class="flow-shift">
+            <article class="flow-card">
+              <div class="flow-year">2003</div>
+              <div class="flow-event">Înscriere în Baroul Cluj</div>
+              <div class="flow-detail">Dobândirea calității de avocat definitiv, titular în Cabinet Individual de Avocatură cu sediul în Turda, Str. Avram Iancu nr. 7, ap. 1.</div>
+            </article>
+          </div>
+        </li>
+        <li class="flow-item" data-side="right">
+          <span class="flow-node" aria-hidden="true"></span>
+          <div class="flow-shift">
+            <article class="flow-card">
+              <div class="flow-year">2003 – prezent</div>
+              <div class="flow-event">Cabinet Individual de Avocatură — Turda</div>
+              <div class="flow-detail">Practică constantă în drept civil (succesiuni, carte funciară) și drept comercial, cu reprezentare la toate gradele de jurisdicție ordinară din județul Cluj.</div>
+            </article>
+          </div>
+        </li>
+        <li class="flow-item" data-side="left">
+          <span class="flow-node" aria-hidden="true"></span>
+          <div class="flow-shift">
+            <article class="flow-card">
+              <div class="flow-year">Nov. 2014 – Mar. 2019</div>
+              <div class="flow-event">Director General — SC Turda Salina Durgau SA</div>
+              <div class="flow-detail">Pe durata celor peste 4 ani de mandat, veniturile societății au crescut de la 8,4 milioane lei la 22 milioane lei, iar profitul brut s-a multiplicat de zece ori — de la 739.549 lei la 7.735.268 lei.</div>
+            </article>
+          </div>
+        </li>
+        <li class="flow-item" data-side="right">
+          <span class="flow-node" aria-hidden="true"></span>
+          <div class="flow-shift">
+            <article class="flow-card">
+              <div class="flow-year">Mai 2019</div>
+              <div class="flow-event">Președinte — Filiala Județeană Cluj, Crucea Roșie Română</div>
+              <div class="flow-detail">Acceptarea rolului de conducere al filialei județene Cluj a Crucii Roșii Române, continuând implicarea civică alături de activitatea juridică.</div>
+            </article>
+          </div>
+        </li>
+        <li class="flow-item" data-side="left">
+          <span class="flow-node" aria-hidden="true"></span>
+          <div class="flow-shift">
+            <article class="flow-card">
+              <div class="flow-year">22+ ani</div>
+              <div class="flow-event">Experiență acumulată</div>
+              <div class="flow-detail">Două decenii de practică juridică neîntreruptă în județul Cluj, cu reprezentare la Judecătoria Turda, Tribunalul Cluj și Curtea de Apel Cluj.</div>
+            </article>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CIVIC ============ -->
+<section id="civic">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="section-inner">
+    <p class="section-label reveal">Dincolo de sala de judecată</p>
+    <h2 class="section-title reveal d1">Implicare civică <em>&amp;</em> comunitară</h2>
+    <div class="section-rule reveal d2"></div>
+    <p class="civic-intro reveal d2">Angajamentul față de comunitate nu s-a oprit la pragul tribunalului. Simona Maria Baciu a îmbinat profesia juridică cu o prezență activă în structuri civice de prestigiu.</p>
+
+    <div class="civic-list">
+      <div class="civic-item reveal d2">
+        <div class="civic-left">
+          <div class="civic-org">Crucea Roșie Română</div>
+          <div class="civic-role">Președinte &middot; Filiala Județeană Cluj</div>
+        </div>
+        <div class="civic-desc">Din mai 2019 conduce filiala județeană Cluj a Crucii Roșii Române, coordonând activitățile umanitare și de voluntariat la nivelul întregului județ.</div>
+      </div>
+      <div class="civic-item reveal d3">
+        <div class="civic-left">
+          <div class="civic-org">Rotary Club Turda</div>
+          <div class="civic-role">Membră</div>
+        </div>
+        <div class="civic-desc">Participare activă în cadrul Rotary Club Turda, organizație internațională dedicată liderilor comunitari, care promovează integritatea, prietenia și spiritul civic.</div>
+      </div>
+      <div class="civic-item reveal d4">
+        <div class="civic-left">
+          <div class="civic-org">Baroul Cluj</div>
+          <div class="civic-role">Membră Titulară &middot; din 2003</div>
+        </div>
+        <div class="civic-desc">Implicare în viața profesională a Baroului Cluj, organism care reunește avocații județului și veghează la respectarea standardelor deontologice ale profesiei.</div>
+      </div>
+      <div class="civic-item reveal d5">
+        <div class="civic-left">
+          <div class="civic-org">Comunitatea Turdei</div>
+          <div class="civic-role">Turda, județul Cluj</div>
+        </div>
+        <div class="civic-desc">Prezență constantă în viața publică a municipiului Turda, contribuind prin expertiză juridică și angajament civic la bunăstarea comunității locale.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label reveal">Luați legătura</p>
+    <h2 class="section-title reveal d1">Date de <em>contact</em></h2>
+    <div class="section-rule reveal d2"></div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-item reveal d2">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Adresa sediu</div>
+            <div class="contact-value">Str. Avram Iancu nr. 7, ap. 1<br>Turda, jud. Cluj, România</div>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal d3">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A14 14 0 0 1 4 7a2 2 0 0 1 1-3z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">
+              <a class="ulink" href="tel:0744476674">0744 476 674</a><br>
+              <a class="ulink" href="tel:0731707037">0731 707 037</a><br>
+              <a class="ulink" href="tel:0264316160">0264 316 160</a> <span style="color:var(--text-light);">(fax)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item reveal d4">
+          <div class="contact-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="1.5"/>
+              <path d="M3 7l9 6 9-6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-label">E-mail</div>
+            <div class="contact-value"><a class="ulink" href="mailto:avocatbaciu@yahoo.com">avocatbaciu@yahoo.com</a></div>
+          </div>
+        </div>
+
+      </div>
+
+      <aside class="contact-panel reveal reveal-right d2">
+        <div class="contact-panel-eyebrow">Cabinet</div>
+        <div class="contact-panel-heading">Cabinet Individual<br>de Avocatură</div>
+        <div class="contact-panel-rule"></div>
+        <div class="contact-panel-name">Simona Maria Baciu</div>
+        <div class="contact-panel-addr">
+          Str. Avram Iancu nr. 7, ap. 1<br>
+          Turda, jud. Cluj, România
+        </div>
+        <a class="contact-panel-cta" href="mailto:avocatbaciu@yahoo.com">
+          Programările se fac telefonic
+          <span class="btn-arrow" aria-hidden="true"></span>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand-block">
+      <div class="footer-brand-name">Simona Maria <em>Baciu</em></div>
+      <p>Cabinet Individual de Avocatură, membră a Baroului Cluj din 1 martie 2003. Drept civil, succesiuni, carte funciară și drept comercial.</p>
+    </div>
+    <div class="footer-col footer-col--2">
+      <div class="footer-col-title">Navigare</div>
+      <ul class="footer-list">
+        <li><a href="#despre">Despre</a></li>
+        <li><a href="#activitate">Activitate</a></li>
+        <li><a href="#parcurs">Parcurs</a></li>
+        <li><a href="#civic">Implicare</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col footer-col--3">
+      <div class="footer-col-title">Cabinet</div>
+      <ul class="footer-list">
+        <li>Str. Avram Iancu nr. 7, ap. 1</li>
+        <li>Turda, jud. Cluj, Romania</li>
+        <li><a class="ulink" href="tel:0744476674">0744 476 674</a></li>
+        <li><a class="ulink" href="mailto:avocatbaciu@yahoo.com">avocatbaciu@yahoo.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-meta">© <span id="yr">2026</span> Cabinet Individual de Avocatura S.M. Baciu</div>
+    <div class="footer-meta">Baroul Cluj</div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- Year ---- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---- Reveal observer ---- */
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => ro.observe(el));
+
+  /* ---- Hero word reveal on load ---- */
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.word-reveal').forEach((el, i) => {
+      const d = parseFloat(el.dataset.d || (0.05 + i * 0.12));
+      el.style.transitionDelay = d + 's';
+      // also offset the inner span via a small JS tick so each word lifts in
+      setTimeout(() => el.classList.add('in'), 200 + i * 110);
+    });
+  });
+
+  /* ---- Number counters — robust, never gets stuck on "0" ----
+     Failure modes addressed:
+       (a) `load` already fired before this script registered (bfcache,
+           defer/async ordering quirks) -> we don't depend on it.
+       (b) requestAnimationFrame throttled in inactive tabs / headless
+           contexts -> a setTimeout safety net always writes the target.
+       (c) Script error mid-animation -> the same safety net still wins. */
+  const easeOutQuart = t => 1 - Math.pow(1 - t, 4);
+  const durationFor = (target) => {
+    const abs = Math.abs(target);
+    if (abs >= 1000) return 2400;
+    if (abs >= 10)   return 3000;
+    return 3600;
+  };
+  const animateCounter = (el) => {
+    const targetRaw = el.dataset.target;
+    const target = parseFloat(targetRaw);
+    if (reduce || isNaN(target)) { el.textContent = targetRaw; return; }
+    const dur = durationFor(target);
+    el.textContent = '0';
+    const start = performance.now();
+    let rafId = 0;
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      if (rafId) cancelAnimationFrame(rafId);
+      el.textContent = targetRaw;
+    };
+    const tick = () => {
+      if (done) return;
+      const elapsed = performance.now() - start;
+      if (elapsed >= dur) { finish(); return; }
+      el.textContent = Math.round(easeOutQuart(elapsed / dur) * target);
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    // Safety net: even if rAF never fires, the final value is written.
+    setTimeout(finish, dur + 600);
+  };
+  const startCounters = () => {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach((el, i) => {
+      setTimeout(() => animateCounter(el), 280 + i * 140);
+    });
+  };
+  // Fire as soon as the script runs (it's at end of body, DOM is ready).
+  // No dependency on `load` — that was the source of the "stuck on 0" bug
+  // when `load` had already fired before this listener registered.
+  setTimeout(startCounters, 0);
+
+  /* ---- Editorial timeline: calm fade-up reveal ---- */
+  const flow = document.querySelector('.flow');
+  if (flow) {
+    const items = flow.querySelectorAll('.flow-item');
+    if (reduce) {
+      items.forEach(it => it.classList.add('in'));
+    } else {
+      const isMobile = window.matchMedia('(max-width: 760px)').matches;
+      const stepMs = isMobile ? 180 : 110;
+      const itemObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          const idx = parseInt(e.target.dataset.idx, 10) || 0;
+          const delay = Math.min(idx, 3) * stepMs;
+          setTimeout(() => e.target.classList.add('in'), delay);
+          itemObs.unobserve(e.target);
+        });
+      }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+      items.forEach((it, i) => { it.dataset.idx = i; itemObs.observe(it); });
+    }
+  }
+
+  /* ---- Text reveal (fast typewriter, word-by-word) ---- */
+  const txSelectors = [
+    '.about-card-text',
+    '.activity-intro',
+    '.activity-text',
+    '.civic-desc',
+    '.contact-panel-addr'
+  ];
+  const splitIntoWords = (el) => {
+    if (el.dataset.txSplit === '1') return;
+    const text = el.textContent;
+    const frag = document.createDocumentFragment();
+    const parts = text.split(/(\s+)/);
+    parts.forEach(part => {
+      if (/^\s+$/.test(part)) {
+        frag.appendChild(document.createTextNode(part));
+      } else if (part.length) {
+        const span = document.createElement('span');
+        span.className = 'tx-word';
+        span.textContent = part;
+        frag.appendChild(span);
+      }
+    });
+    el.textContent = '';
+    el.appendChild(frag);
+    el.classList.add('tx-reveal');
+    el.dataset.txSplit = '1';
+  };
+  const revealWords = (el) => {
+    const words = el.querySelectorAll('.tx-word');
+    // Gentle, blended cadence — fast enough to feel like a reveal,
+    // soft enough not to read as a typewriter.
+    const step = words.length > 40 ? 14 : (words.length > 20 ? 22 : 32);
+    words.forEach((w, i) => {
+      w.style.transitionDelay = (i * step) + 'ms';
+    });
+    requestAnimationFrame(() => el.classList.add('in'));
+  };
+  if (!reduce) {
+    const txEls = document.querySelectorAll(txSelectors.join(','));
+    txEls.forEach(splitIntoWords);
+    const txObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          revealWords(e.target);
+          txObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+    txEls.forEach(el => txObs.observe(el));
+  }
+
+  /* ---- Scroll progress + nav hide-on-scroll-down ---- */
+  const nav = document.getElementById('siteNav');
+  const progress = document.getElementById('scrollProgress');
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  const onScroll = () => {
+    const y = window.scrollY;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const p = h > 0 ? (y / h) * 100 : 0;
+    progress.style.setProperty('--p', p + '%');
+
+    if (y > 80) nav.classList.add('solid'); else nav.classList.remove('solid');
+
+    if (y > lastY && y > 200) {
+      nav.classList.add('hidden');
+    } else {
+      nav.classList.remove('hidden');
+    }
+    lastY = y;
+    ticking = false;
+  };
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+  }, { passive: true });
+
+  /* ---- Scrollspy for nav active state ---- */
+  const sections = ['hero','despre','activitate','parcurs','civic','contact']
+    .map(id => document.getElementById(id)).filter(Boolean);
+  const navMap = new Map();
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const id = a.getAttribute('href').replace('#','');
+    navMap.set(id, a);
+  });
+  const so = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navMap.forEach(a => a.classList.remove('active'));
+        const a = navMap.get(e.target.id);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sections.forEach(s => so.observe(s));
+
+  /* ---- Mobile drawer ---- */
+  const navToggle = nav.querySelector('.nav-toggle');
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>

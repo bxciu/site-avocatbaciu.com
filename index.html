@@ -9,6 +9,11 @@
 <meta property="og:description" content="Cabinet Individual de Avocatură. Peste 22 de ani de practică în drept civil și comercial. Turda, jud. Cluj." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.avocatbaciu.com/" />
+<meta property="og:image" content="https://www.avocatbaciu.com/assets/images/og-twitter-card.jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="634" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:image" content="https://www.avocatbaciu.com/assets/images/og-twitter-card.jpeg" />
 <link rel="canonical" href="https://www.avocatbaciu.com/" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Simona Maria Baciu" />
@@ -23,6 +28,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
 
+<link rel="dns-prefetch" href="//www.baroul-cluj.ro" />
+<link rel="dns-prefetch" href="//www.google.com" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
@@ -89,10 +96,11 @@
      1. RESET & BASE
      ================================================================ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background-color: #1a1612; }
 
   body {
     background: var(--cream);
+    min-height: 100vh;
     color: var(--text-dark);
     font-family: 'EB Garamond', Georgia, serif;
     font-size: 18px;
@@ -1012,6 +1020,8 @@
     font-weight: 500;
     line-height: 1.75;
   }
+  .flow-detail .card-link { color: var(--text-mid); }
+  .flow-detail .card-link:hover { color: var(--gold-light); }
 
   /* Mobile: rule on the left, single column */
   @media (max-width: 760px) {
@@ -1158,7 +1168,7 @@
     margin-bottom: 0.3rem; font-weight: 700;
   }
   .contact-value { font-size: 1.02rem; color: var(--text-dark); line-height: 1.7; font-weight: 500; }
-  .contact-value a { color: var(--green-dark); font-weight: 600; }
+  .contact-value a, a.contact-value { color: var(--green-dark); font-weight: 600; }
 
   .contact-panel {
     position: relative;
@@ -1774,7 +1784,7 @@
             <article class="flow-card">
               <div class="flow-year">2003</div>
               <h3 class="flow-event">Înscriere în Baroul Cluj</h3>
-              <div class="flow-detail">Dobândirea calității de avocat definitiv, titular în Cabinet Individual de Avocatură cu sediul în Turda, Str. Avram Iancu nr. 7, ap. 1.</div>
+              <div class="flow-detail">Dobândirea calității de avocat definitiv, titular în Cabinet Individual de Avocatură cu sediul în Turda, Str. Avram Iancu.</div>
             </article>
           </div>
         </li>
@@ -1794,7 +1804,7 @@
             <article class="flow-card">
               <div class="flow-year">Nov. 2014 – Mar. 2019</div>
               <h3 class="flow-event">Director General — SC Turda Salina Durgau SA</h3>
-              <div class="flow-detail">Pe durata celor peste 4 ani de mandat, veniturile societății au crescut de la 8,4 milioane lei la 22 milioane lei, iar profitul brut s-a multiplicat de zece ori — de la 739.549 lei la 7.735.268 lei.<br><a href="https://turdanews.net/rezultatele-financiare-ale-societatii-turda-salina-durgau-sa-sunt-fabuloase/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:0.55rem; font-style:italic; text-decoration:underline; color:inherit; font-weight:inherit;">Citește mai mult →</a></div>
+              <div class="flow-detail">Pe durata celor peste 4 ani de mandat, veniturile societății au crescut de la 8,4 milioane lei la 22 milioane lei, iar profitul brut s-a multiplicat de zece ori — de la 739.549 lei la 7.735.268 lei.<br><a href="https://turdanews.net/rezultatele-financiare-ale-societatii-turda-salina-durgau-sa-sunt-fabuloase/" target="_blank" rel="noopener noreferrer" class="card-link">Citește mai mult <span aria-hidden="true">→</span></a></div>
             </article>
           </div>
         </li>
@@ -1981,6 +1991,9 @@
 </footer>
 
 <script>
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+if (!location.hash) window.scrollTo(0, 0);
+
 (() => {
   'use strict';
 

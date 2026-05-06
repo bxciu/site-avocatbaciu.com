@@ -96,10 +96,11 @@
      1. RESET & BASE
      ================================================================ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; background-color: #1a1612; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overscroll-behavior: none; }
 
   body {
     background: var(--cream);
+    overscroll-behavior: none;
     min-height: 100vh;
     color: var(--text-dark);
     font-family: 'EB Garamond', Georgia, serif;

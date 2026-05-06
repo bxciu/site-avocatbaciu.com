@@ -2222,19 +2222,6 @@
     else if(t === 'mail'){ el.href = 'mailto:' + em; el.textContent = em; }
     else if(t === 'tel-href-only'){ el.href = 'tel:' + ph; }
   });
-  var ld = document.createElement('script');
-  ld.type = 'application/ld+json';
-  ld.textContent = JSON.stringify({
-    "@context":"https://schema.org","@type":"Attorney",
-    "name":"Simona Maria Baciu",
-    "description":"Cabinet Individual de Avocatură, membră a Baroului Cluj din 2003. Drept civil, succesiuni, carte funciară, drept comercial.",
-    "address":{"@type":"PostalAddress","streetAddress":"Str. Avram Iancu nr. 7, ap. 1","addressLocality":"Turda","addressRegion":"Cluj","addressCountry":"RO"},
-    "telephone": "+4" + ph,
-    "email": em,
-    "areaServed":"Cluj County, Romania",
-    "memberOf":{"@type":"Organization","name":"Baroul Cluj"}
-  });
-  document.head.appendChild(ld);
 })();
 </script>
 </body>

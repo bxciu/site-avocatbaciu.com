@@ -155,7 +155,6 @@
     transition:
       opacity 1.05s cubic-bezier(.22,.61,.28,1),
       transform 1.05s cubic-bezier(.22,.61,.28,1);
-    will-change: opacity, transform;
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-right { transform: translateX(20px); }
@@ -1385,7 +1384,6 @@
     opacity: 0;
     transform: translateY(0.06em);
     transition: opacity 1s cubic-bezier(.22,.61,.28,1), transform 1s cubic-bezier(.22,.61,.28,1);
-    will-change: opacity, transform;
   }
   .tx-reveal.in .tx-word {
     opacity: 1;
@@ -1601,7 +1599,7 @@
     </div>
   </div>
 
-  <div class="hero-right" aria-hidden="true">
+  <div class="hero-right">
     <div class="hero-seal">
       <div class="hero-seal-bg"></div>
       <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sigiliu Cabinet S.M.B.">
@@ -1768,7 +1766,7 @@
           <div class="flow-shift">
             <article class="flow-card">
               <div class="flow-year">2003</div>
-              <div class="flow-event">Înscriere în Baroul Cluj</div>
+              <h3 class="flow-event">Înscriere în Baroul Cluj</h3>
               <div class="flow-detail">Dobândirea calității de avocat definitiv, titular în Cabinet Individual de Avocatură cu sediul în Turda, Str. Avram Iancu nr. 7, ap. 1.</div>
             </article>
           </div>
@@ -1778,7 +1776,7 @@
           <div class="flow-shift">
             <article class="flow-card">
               <div class="flow-year">2003 – prezent</div>
-              <div class="flow-event">Cabinet Individual de Avocatură — Turda</div>
+              <h3 class="flow-event">Cabinet Individual de Avocatură — Turda</h3>
               <div class="flow-detail">Practică constantă în drept civil (succesiuni, carte funciară) și drept comercial, cu reprezentare la toate gradele de jurisdicție ordinară din județul Cluj.</div>
             </article>
           </div>
@@ -1788,7 +1786,7 @@
           <div class="flow-shift">
             <article class="flow-card">
               <div class="flow-year">Nov. 2014 – Mar. 2019</div>
-              <div class="flow-event">Director General — SC Turda Salina Durgau SA</div>
+              <h3 class="flow-event">Director General — SC Turda Salina Durgau SA</h3>
               <div class="flow-detail">Pe durata celor peste 4 ani de mandat, veniturile societății au crescut de la 8,4 milioane lei la 22 milioane lei, iar profitul brut s-a multiplicat de zece ori — de la 739.549 lei la 7.735.268 lei.<br><a href="https://turdanews.net/rezultatele-financiare-ale-societatii-turda-salina-durgau-sa-sunt-fabuloase/" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:0.55rem; font-style:italic; text-decoration:underline; color:inherit; font-weight:inherit;">Citește mai mult →</a></div>
             </article>
           </div>
@@ -1798,7 +1796,7 @@
           <div class="flow-shift">
             <article class="flow-card">
               <div class="flow-year">2019 — prezent</div>
-              <div class="flow-event">Președinte — Filiala Județeană Cluj, Crucea Roșie Română</div>
+              <h3 class="flow-event">Președinte — Filiala Județeană Cluj, Crucea Roșie Română</h3>
               <div class="flow-detail">Coordonarea activității filialei județene Cluj a Crucii Roșii Române din mai 2019.</div>
             </article>
           </div>
@@ -1808,7 +1806,7 @@
           <div class="flow-shift">
             <article class="flow-card">
               <div class="flow-year">22+ ani</div>
-              <div class="flow-event">Experiență acumulată</div>
+              <h3 class="flow-event">Experiență acumulată</h3>
               <div class="flow-detail">Două decenii de practică juridică în județul Cluj și în aria de competență a județului Cluj.</div>
             </article>
           </div>
@@ -1949,13 +1947,15 @@
     </div>
     <div class="footer-col footer-col--2">
       <div class="footer-col-title">Navigare</div>
-      <ul class="footer-list">
-        <li><a href="#despre">Despre</a></li>
-        <li><a href="#activitate">Activitate</a></li>
-        <li><a href="#parcurs">Parcurs</a></li>
-        <li><a href="#civic">Implicare</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+      <nav aria-label="Navigare footer">
+        <ul class="footer-list">
+          <li><a href="#despre">Despre</a></li>
+          <li><a href="#activitate">Activitate</a></li>
+          <li><a href="#parcurs">Parcurs</a></li>
+          <li><a href="#civic">Implicare</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
     <div class="footer-col footer-col--3">
       <div class="footer-col-title">Cabinet</div>

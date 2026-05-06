@@ -2172,15 +2172,41 @@
   /* ---- Mobile drawer ---- */
   const navToggle = nav.querySelector('.nav-toggle');
   if (navToggle) {
+    const navLinks = nav.querySelector('.nav-links');
+
+    function openMenu() {
+      nav.classList.add('open');
+      navToggle.setAttribute('aria-expanded', 'true');
+      const firstLink = navLinks.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+
+    function closeMenu() {
+      nav.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.focus();
+    }
+
     navToggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (nav.classList.contains('open')) closeMenu();
+      else openMenu();
     });
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        nav.classList.remove('open');
-        navToggle.setAttribute('aria-expanded', 'false');
-      });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    nav.addEventListener('keydown', e => {
+      if (!nav.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key !== 'Tab') return;
+      const focusable = [...nav.querySelectorAll('a, button')].filter(el => !el.disabled);
+      const first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
     });
   }
 })();

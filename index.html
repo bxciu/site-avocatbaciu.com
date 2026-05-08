@@ -61,7 +61,7 @@
   }
 
   body {
-    filter: saturate(1.14) contrast(1.05);
+    filter: saturate(1.24) contrast(1.05);
   }
 </style>
 <style>
@@ -118,13 +118,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Hero eyebrow — Cabinet de Avocatură · Baroul Cluj */
-  .hero-eyebrow {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 
   /* Buton primar — Programare consultanță (background auriu devine metalic) */
   .btn:not(.btn--ghost) {
@@ -170,6 +163,40 @@
     -webkit-text-fill-color: transparent;
   }
 
+  /* 22+ si 3 — fara glint, culoare aurie plata */
+  .hero-stats > div:nth-child(1) .hero-stat-num,
+  .hero-stats > div:nth-child(3) .hero-stat-num {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--gold);
+  }
+  .hero-stats > div:nth-child(1) .hero-stat-num sup,
+  .hero-stats > div:nth-child(3) .hero-stat-num sup {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--gold-light);
+  }
+
+  /* 1000+ hero stat — shine pe ultimul '0' (69.3%) si '+' (82.8%), centru 76% */
+  /* Animatia counter nu e afectata — schimba doar textContent, gradientul ramane fix */
+  .hero-stats > div:nth-child(2) .hero-stat-num {
+    background: linear-gradient(105deg,
+      var(--gold)  0%,
+      var(--gold)  58%,
+      #F5E9A0      76%,
+      var(--gold)  92%,
+      var(--gold)  100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
   /* ── Glint pozitionat exact per element ── */
 
   /* Card 1 "Baroul Cluj" — shine pe litera 'o' (7.4%) */
@@ -186,13 +213,27 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Card 2 "Drept de pledoarie extins" — shine pe 'pl' (18.5%) */
+  /* Card 2 "Drept de pledoarie extins" — shine pe 'rie' (30.8%), mai lat */
   .about-card:nth-child(2) .about-card-title {
     background: linear-gradient(105deg,
       var(--gold)  0%,
-      var(--gold)  12%,
-      #F5E9A0      18.5%,
-      var(--gold)  25%,
+      var(--gold)  18%,
+      #F5E9A0      30.8%,
+      var(--gold)  44%,
+      var(--gold)  100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Card 3 "Consultanță Directă" — shine pe 'rec' (29.6%) */
+  .about-card:nth-child(3) .about-card-title {
+    background: linear-gradient(105deg,
+      var(--gold)  0%,
+      var(--gold)  22%,
+      #F5E9A0      29.6%,
+      var(--gold)  37%,
       var(--gold)  100%
     );
     -webkit-background-clip: text;

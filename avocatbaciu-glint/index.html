@@ -276,18 +276,20 @@
     -webkit-text-fill-color: transparent;
   }
 </style>
-<!-- NAV HIDE-ON-LOAD / SHOW-ON-SCROLL-UP -->
+<!-- NAV HIDE-ON-LOAD / SHOW-ON-SCROLL-UP (mobile only) -->
 <style>
-  nav.site-nav {
-    transition: transform 0.3s ease, opacity 0.3s ease,
-                background 0.4s ease, border-color 0.4s;
+  @media (max-width: 768px) {
+    nav.site-nav {
+      transition: transform 0.3s ease, opacity 0.3s ease,
+                  background 0.4s ease, border-color 0.4s;
+    }
+    nav.site-nav.nav--hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
   }
-  nav.site-nav.nav--hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-  }
-  @media (prefers-reduced-motion: reduce) {
+  @media (max-width: 768px) and (prefers-reduced-motion: reduce) {
     nav.site-nav { transition: none; }
   }
 </style>
@@ -1132,10 +1134,12 @@ if (!location.hash) window.scrollTo(0, 0);
   });
 })();
 </script>
-<!-- NAV HIDE-ON-LOAD / SHOW-ON-SCROLL-UP -->
+<!-- NAV HIDE-ON-LOAD / SHOW-ON-SCROLL-UP (mobile only) -->
 <script>
 (function () {
   'use strict';
+  if (window.innerWidth > 768) return;
+
   var nav = document.getElementById('siteNav');
   if (!nav) return;
 

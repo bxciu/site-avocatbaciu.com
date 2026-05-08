@@ -61,7 +61,7 @@
   }
 
   body {
-    filter: saturate(1.14) contrast(1.05);
+    filter: saturate(1.24) contrast(1.05);
   }
 </style>
 <style>
@@ -168,6 +168,24 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  /* 22+ si 3 — fara glint, culoare aurie plata */
+  .hero-stats > div:nth-child(1) .hero-stat-num,
+  .hero-stats > div:nth-child(3) .hero-stat-num {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--gold);
+  }
+  .hero-stats > div:nth-child(1) .hero-stat-num sup,
+  .hero-stats > div:nth-child(3) .hero-stat-num sup {
+    background: none;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    -webkit-text-fill-color: unset;
+    color: var(--gold-light);
   }
 
   /* 1000+ hero stat — shine pe ultimul '0' (69.3%) si '+' (82.8%), centru 76% */

@@ -288,6 +288,18 @@
       opacity: 0;
       pointer-events: none;
     }
+    /* Neutralizeaza clasa .hidden a scriptului vechi pe mobil —
+       noul script controleaza exclusiv via .nav--hidden */
+    nav.site-nav.hidden {
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+    }
+    nav.site-nav.nav--hidden.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
   }
   @media (max-width: 768px) and (prefers-reduced-motion: reduce) {
     nav.site-nav { transition: none; }
@@ -1152,12 +1164,13 @@ if (!location.hash) window.scrollTo(0, 0);
     var y = window.scrollY;
     if (y < 10) {
       nav.classList.add('nav--hidden');
-    } else if (y > lastY) {
+    } else if (y > lastY + 4) {
       nav.classList.add('nav--hidden');
-    } else {
+      lastY = y;
+    } else if (y < lastY - 8) {
       nav.classList.remove('nav--hidden');
+      lastY = y;
     }
-    lastY = y;
     ticking = false;
   }
 

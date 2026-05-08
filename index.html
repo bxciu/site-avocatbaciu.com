@@ -41,6 +41,11 @@
 
 <link rel="stylesheet" href="style.css" />
 <style>
+  /* Hero — foloseste dvh pe mobil ca sa nu fie taiat de bara browserului */
+  @media (max-width: 768px) {
+    #hero { min-height: 100dvh; }
+  }
+
   /* ── BOOST-COLOR EXPERIMENT ── mai mult contrast, fara luminozitate mai mare ── */
   :root {
     /* Gold — aceeasi nuanta, mai saturata, L usor mai jos */

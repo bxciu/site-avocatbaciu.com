@@ -1146,7 +1146,7 @@ if (!location.hash) window.scrollTo(0, 0);
   });
 })();
 </script>
-<!-- NAV HIDE-ON-LOAD / SHOW-ON-SCROLL-UP (mobile only) -->
+<!-- NAV HIDE-ON-LOAD (mobile only) — apare la primul scroll -->
 <script>
 (function () {
   'use strict';
@@ -1157,28 +1157,9 @@ if (!location.hash) window.scrollTo(0, 0);
 
   nav.classList.add('nav--hidden');
 
-  var lastY = window.scrollY;
-  var ticking = false;
-
-  function onScroll() {
-    var y = window.scrollY;
-    if (y < 10) {
-      nav.classList.add('nav--hidden');
-    } else if (y > lastY + 4) {
-      nav.classList.add('nav--hidden');
-      lastY = y;
-    } else if (y < lastY - 8) {
-      nav.classList.remove('nav--hidden');
-      lastY = y;
-    }
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', function () {
-    if (!ticking) {
-      requestAnimationFrame(onScroll);
-      ticking = true;
-    }
+  window.addEventListener('scroll', function show() {
+    nav.classList.remove('nav--hidden');
+    window.removeEventListener('scroll', show);
   }, { passive: true });
 })();
 </script>

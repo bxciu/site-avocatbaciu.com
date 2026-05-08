@@ -40,6 +40,84 @@
 
 
 <link rel="stylesheet" href="style.css" />
+<style>
+  /* ── BOOST-COLOR EXPERIMENT ── mai mult contrast, fara luminozitate mai mare ── */
+  :root {
+    /* Gold — aceeasi nuanta, mai saturata, L usor mai jos */
+    --gold-deep:  #9E7420;
+    --gold:       #C49A35;
+    --gold-light: #D4B46A;
+    --gold-pale:  #E8D090;
+
+    /* Text — mai inchis pe fundaluri cream */
+    --text-mid:   #28221A;
+    --text-light: #5A4E3C;
+
+    /* Umbre mai opace */
+    --shadow-sm:   0 4px 14px rgba(0, 38, 26, 0.10);
+    --shadow-md:   0 14px 40px rgba(0, 38, 26, 0.17);
+    --shadow-lg:   0 30px 70px rgba(0, 38, 26, 0.24);
+    --shadow-gold: 0 18px 40px rgba(168, 132, 62, 0.32);
+  }
+
+  body {
+    filter: saturate(1.14) contrast(1.05);
+  }
+</style>
+<style>
+  /* ── GOLD GLINT — streak metalic static, fără animație ── */
+  :root {
+    --glint-text: linear-gradient(
+      105deg,
+      var(--gold-deep) 0%,
+      var(--gold)      28%,
+      #F5E9A0          48%,
+      var(--gold)      64%,
+      var(--gold-deep) 100%
+    );
+  }
+
+  .hero-name .baciu-gold,
+  .hero-name em {
+    background: var(--glint-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-stat-num {
+    background: var(--glint-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .hero-stat-num sup {
+    background: var(--glint-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-divider {
+    background: linear-gradient(
+      90deg,
+      transparent      0%,
+      var(--gold-deep) 15%,
+      #F5E9A0          50%,
+      var(--gold-deep) 85%,
+      transparent      100%
+    );
+  }
+
+  .nav-brand {
+    background: var(--glint-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -228,8 +306,8 @@
         <div class="hero-stat-label">Ani de activitate</div>
       </div>
       <div>
-        <div class="hero-stat-num"><span class="counter" data-target="2003">0</span></div>
-        <div class="hero-stat-label">Înscrisă în Barou</div>
+        <div class="hero-stat-num"><span class="counter" data-target="1000">0</span><sup>+</sup></div>
+        <div class="hero-stat-label">Cazuri soluționate</div>
       </div>
       <div>
         <div class="hero-stat-num"><span class="counter" data-target="3">0</span></div>

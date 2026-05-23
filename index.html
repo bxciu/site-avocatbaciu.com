@@ -647,7 +647,7 @@
 <section id="contact" aria-label="Date de contact cabinet avocat Turda">
   <div class="section-inner">
     <p class="section-label reveal">Contact</p>
-    <h2 class="contact-heading reveal">Hai să vorbim.</h2>
+    <h2 class="contact-heading reveal reveal-left">Hai să vorbim.</h2>
 
     <div class="contact-grid">
       <div>
@@ -856,7 +856,7 @@ if (!location.hash) window.scrollTo(0, 0);
       items.forEach(it => it.classList.add('in'));
     } else {
       const isMobile = window.matchMedia('(max-width: 760px)').matches;
-      const stepMs = isMobile ? 180 : 110;
+      const stepMs = isMobile ? 80 : 60;
       const itemObs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
           if (!e.isIntersecting) return;

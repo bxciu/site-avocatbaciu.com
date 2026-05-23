@@ -126,20 +126,42 @@
     opacity: 0;
     transform: translateY(16px);
     transition:
-      opacity 1.05s cubic-bezier(.22,.61,.28,1),
-      transform 1.05s cubic-bezier(.22,.61,.28,1);
+      opacity 0.85s var(--ease-soft),
+      transform 0.85s var(--ease-soft);
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-right { transform: translateX(20px); }
   .reveal-right.visible { transform: translateX(0); }
   .reveal-left  { transform: translateX(-20px); }
   .reveal-left.visible { transform: translateX(0); }
-  .d1 { transition-delay: 0.08s; }
-  .d2 { transition-delay: 0.18s; }
-  .d3 { transition-delay: 0.30s; }
-  .d4 { transition-delay: 0.42s; }
-  .d5 { transition-delay: 0.54s; }
-  .d6 { transition-delay: 0.66s; }
+
+  /* Duration variation by element type */
+  .section-label.reveal   { transition-duration: 0.60s; }
+  .section-title.reveal   { transition-duration: 0.75s; }
+  .about-card.reveal      { transition-duration: 0.90s; }
+  .activity-card.reveal   { transition-duration: 0.90s; }
+
+  /* Scale micro-reveal on cards */
+  .about-card.reveal-right          { transform: translateX(20px) scale(0.97); }
+  .activity-card.reveal             { transform: translateY(16px) scale(0.97); }
+  .about-card.visible,
+  .activity-card.visible            { transform: none; }
+
+  /* Stagger delays — 50ms steps */
+  .d1 { transition-delay: 0.05s; }
+  .d2 { transition-delay: 0.10s; }
+  .d3 { transition-delay: 0.15s; }
+  .d4 { transition-delay: 0.20s; }
+  .d5 { transition-delay: 0.25s; }
+  .d6 { transition-delay: 0.30s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-left, .reveal-right {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
 
   /* Word reveal for hero name */
   .word-reveal { display: inline-block; overflow: hidden; vertical-align: bottom; }

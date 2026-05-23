@@ -681,30 +681,27 @@
   .about-text > p { margin-bottom: 1.3rem; color: var(--text-mid); font-size: 1.04rem; font-weight: 500; }
   .about-text strong { color: var(--green-dark); font-weight: 700; }
 
-  /* Box background on figure so background-clip:text works cleanly on blockquote */
-  .about-text figure {
-    background: linear-gradient(135deg, var(--cream) 0%, var(--paper) 100%);
+  /* Quote strip — full-bleed, iese din about-grid */
+  .quote-strip {
+    background: var(--green-dark);
+    border-top: 1px solid rgba(201, 168, 108, 0.28);
+    border-bottom: 1px solid rgba(201, 168, 108, 0.28);
+    padding: clamp(2.8rem, 5vw, 4.5rem) clamp(1.5rem, 8vw, 8rem);
+    text-align: center;
+    margin: 0;
   }
   .about-quote {
-    position: relative;
-    border-left: 2px solid var(--gold);
-    padding: 2.8rem 1.7rem 2.2rem;
-    margin: 2.2rem 0;
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.08rem;
+    font-size: clamp(1.3rem, 2.2vw, 1.75rem);
     font-weight: 400;
-    line-height: 1.65;
-    color: #c9a84c;
-    text-shadow: 0 1px 3px rgba(80,50,10,0.13);
+    line-height: 1.6;
+    color: var(--gold-light);
+    max-width: 760px;
+    margin: 0 auto;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   }
-  .about-quote::before {
-    content: '\201C';
-    position: absolute; top: 4px; left: 0.9rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem; color: var(--gold);
-    line-height: 1; opacity: 0.7;
-  }
+  .about-quote::before { content: none; }
 
   /* ================================================================
      8. ACTIVITATE

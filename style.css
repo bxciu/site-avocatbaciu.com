@@ -1101,6 +1101,16 @@
      11. CONTACT
      ================================================================ */
   #contact { background: var(--cream-dark); }
+  .contact-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--green-dark);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+  }
   .contact-grid {
     display: grid; grid-template-columns: 1fr 1fr;
     gap: clamp(2.5rem, 5vw, 5rem);

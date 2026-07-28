@@ -40,152 +40,6 @@
 
 
 <link rel="stylesheet" href="style.css" />
-<style>
-  /* Hero — foloseste dvh pe mobil ca sa nu fie taiat de bara browserului */
-  @media (max-width: 768px) {
-    #hero { min-height: 100dvh; }
-  }
-
-  /* ── BOOST-COLOR EXPERIMENT ── mai mult contrast, fara luminozitate mai mare ── */
-  :root {
-    /* Gold — aceeasi nuanta, mai saturata, L usor mai jos */
-    --gold-deep:  #9E7420;
-    --gold:       #C49A35;
-    --gold-light: #D4B46A;
-    --gold-pale:  #E8D090;
-
-    /* Text — mai inchis pe fundaluri cream */
-    --text-mid:   #28221A;
-    --text-light: #5A4E3C;
-
-    /* Umbre mai opace */
-    --shadow-sm:   0 4px 14px rgba(0, 38, 26, 0.10);
-    --shadow-md:   0 14px 40px rgba(0, 38, 26, 0.17);
-    --shadow-lg:   0 30px 70px rgba(0, 38, 26, 0.24);
-    --shadow-gold: 0 18px 40px rgba(168, 132, 62, 0.32);
-  }
-
-  body {
-    filter: saturate(1.24) contrast(1.05);
-  }
-</style>
-<style>
-  /* ── GOLD GLINT — streak metalic static, fără animație ── */
-  :root {
-    --glint-text: linear-gradient(
-      105deg,
-      var(--gold)  0%,
-      var(--gold)  25%,
-      #F5E9A0      48%,
-      var(--gold)  68%,
-      var(--gold)  100%
-    );
-  }
-
-  .hero-name .baciu-gold,
-  .hero-name em {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero-stat-num {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-  .hero-stat-num sup {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero-divider {
-    background: linear-gradient(
-      90deg,
-      transparent      0%,
-      var(--gold-deep) 15%,
-      #F5E9A0          50%,
-      var(--gold-deep) 85%,
-      transparent      100%
-    );
-  }
-
-  /* nav-brand — fara glint */
-
-
-  /* Buton primar — Programare consultanță (background auriu devine metalic) */
-  .btn:not(.btn--ghost) {
-    background: linear-gradient(
-      105deg,
-      var(--gold)  0%,
-      var(--gold)  25%,
-      #F5E9A0      48%,
-      var(--gold)  68%,
-      var(--gold)  100%
-    );
-  }
-
-  /* about-card-title — fara glint */
-
-  /* civic-org — fara glint */
-
-  /* "Dincolo de sala de judecată" — section-label din #civic */
-  #civic .section-label {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* Contact — Cabinet Individual de Avocatură */
-  .contact-panel-heading {
-    background: var(--glint-text);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  /* 22+ si 3 — fara glint, culoare aurie plata */
-  .hero-stats > div:nth-child(1) .hero-stat-num,
-  .hero-stats > div:nth-child(3) .hero-stat-num {
-    background: none;
-    -webkit-background-clip: unset;
-    background-clip: unset;
-    -webkit-text-fill-color: unset;
-    color: var(--gold);
-  }
-  .hero-stats > div:nth-child(1) .hero-stat-num sup,
-  .hero-stats > div:nth-child(3) .hero-stat-num sup {
-    background: none;
-    -webkit-background-clip: unset;
-    background-clip: unset;
-    -webkit-text-fill-color: unset;
-    color: var(--gold-light);
-  }
-
-  /* 1000+ hero stat — shine pe ultimul '0' (69.3%) si '+' (82.8%), centru 76% */
-  /* Animatia counter nu e afectata — schimba doar textContent, gradientul ramane fix */
-  .hero-stats > div:nth-child(2) .hero-stat-num {
-    background: linear-gradient(105deg,
-      var(--gold)  0%,
-      var(--gold)  58%,
-      #F5E9A0      76%,
-      var(--gold)  92%,
-      var(--gold)  100%
-    );
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-  }
-
-</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -344,16 +198,14 @@
   <div class="hero-vignette" aria-hidden="true"></div>
 
   <div class="hero-left">
-    <p class="hero-eyebrow">Cabinet de Avocatură &nbsp;&middot;&nbsp; Baroul Cluj</p>
+    <p class="hero-eyebrow">Cabinet de Avocatură</p>
 
     <h1 class="hero-name">
       <span class="word-reveal" data-d="0.05"><span>Simona</span></span><br>
       <span class="word-reveal" data-d="0.18"><span>Maria&nbsp;</span></span><span class="word-reveal" data-d="0.30"><span><span class="baciu-gold">Baciu</span></span></span>
     </h1>
 
-    <p class="hero-subtitle">
-      Avocat Definitiv <span class="sep">&middot;</span> Turda, jud. Cluj
-    </p>
+    <p class="hero-subtitle">Turda, jud. Cluj</p>
 
     <div class="hero-divider" aria-hidden="true"></div>
 
@@ -390,9 +242,9 @@
       <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sigiliu Cabinet S.M.B.">
         <defs>
           <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#F0E2C2"/>
-            <stop offset="50%" stop-color="#C9A86C"/>
-            <stop offset="100%" stop-color="#A8843E"/>
+            <stop offset="0%"  stop-color="#E8D090"/>
+            <stop offset="65%" stop-color="#C49A35"/>
+            <stop offset="100%" stop-color="#9E7420"/>
           </linearGradient>
           <linearGradient id="glintGrad" x1="0" y1="0" x2="1" y2="0.27" gradientUnits="objectBoundingBox">
             <stop offset="0%"   stop-color="#C49A35"/>
@@ -415,14 +267,6 @@
           <text class="seal-circ-text">
             <textPath href="#circPath" startOffset="0" textLength="1225" lengthAdjust="spacing">JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS &#8226; JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS</textPath>
           </text>
-        </g>
-
-        <!-- Corner ornaments -->
-        <g stroke="url(#goldGrad)" stroke-width="0.8" fill="none" opacity="0.85">
-          <path d="M 250 50 L 250 78 M 230 64 L 270 64"/>
-          <path d="M 250 450 L 250 422 M 230 436 L 270 436"/>
-          <path d="M 50 250 L 78 250 M 64 230 L 64 270"/>
-          <path d="M 450 250 L 422 250 M 436 230 L 436 270"/>
         </g>
 
         <!-- Center monogram -->
@@ -496,38 +340,112 @@
     <p class="section-label reveal">Domenii de practică</p>
     <h2 class="section-title reveal d1">Arii de activitate <em>juridică</em></h2>
     <div class="section-rule reveal d2"></div>
-    <p class="activity-intro reveal d2">Drept civil și drept comercial — două domenii distincte, un singur cabinet care le acoperă de peste două decenii în județul Cluj.</p>
+    <p class="activity-intro reveal d2">Drept civil — aria principală de practică a cabinetului — alături de dreptul comercial, administrativ și fiscal, acoperite de peste două decenii în județul Cluj.</p>
 
-    <div class="activity-grid">
-      <article class="activity-card reveal d2">
-        <div class="activity-icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24 6v36"/>
-            <path d="M14 14h20"/>
-            <path d="M10 18 L6 30 a4 4 0 0 0 8 0 z"/>
-            <path d="M38 18 L34 30 a4 4 0 0 0 8 0 z"/>
-            <path d="M14 42h20"/>
-          </svg>
+    <div class="activity-primary">
+      <article class="activity-card activity-card--wide reveal d2">
+        <div class="activity-card-left">
+          <div class="activity-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+              <path pathLength="1" d="M24 6v36"/>
+              <path pathLength="1" d="M14 14h20"/>
+              <path pathLength="1" d="M10 18 L6 30 a4 4 0 0 0 8 0 z"/>
+              <path pathLength="1" d="M38 18 L34 30 a4 4 0 0 0 8 0 z"/>
+              <path pathLength="1" d="M14 42h20"/>
+            </svg>
+          </div>
+          <div class="activity-domain">Drept Civil</div>
+          <h3 class="activity-title">Aria principală de practică</h3>
+          <p class="activity-text">Domeniul central de activitate al cabinetului, structurat pe patru arii distincte de expertiză — de la dreptul de proprietate la raporturile de muncă.</p>
         </div>
-        <div class="activity-domain">Drept Civil</div>
-        <h3 class="activity-title">Succesiuni și Carte Funciară</h3>
-        <p class="activity-text">Asistență juridică completă în materia succesiunilor și a drepturilor reale imobiliare, cu expertiză în procedurile de carte funciară.</p>
-        <ul class="activity-list">
-          <li>Deschiderea și dezbaterea succesiunilor</li>
-          <li>Testamente și litigii succesorale</li>
-          <li>Întăbulare și înscriere în cartea funciară</li>
-          <li>Rectificarea cărții funciare</li>
-          <li>Uzucapiunea și dobândirea dreptului de proprietate</li>
-          <li>Partaj judiciar și convențional</li>
-        </ul>
-      </article>
 
+        <div class="activity-card-right">
+          <div class="activity-accordion">
+            <div class="accordion-item open">
+              <h4 class="accordion-heading">
+                <button class="accordion-trigger" aria-expanded="true">
+                  <span>Carte Funciară</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <ul class="activity-list">
+                    <li>Întăbulare și înscriere în cartea funciară</li>
+                    <li>Rectificarea cărții funciare</li>
+                    <li>Uzucapiunea și dobândirea dreptului de proprietate</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h4 class="accordion-heading">
+                <button class="accordion-trigger" aria-expanded="false">
+                  <span>Contracte</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <ul class="activity-list">
+                    <li>Redactarea și negocierea contractelor civile</li>
+                    <li>Contracte de vânzare-cumpărare imobiliară</li>
+                    <li>Litigii privind executarea sau rezilierea contractelor</li>
+                    <li>Recuperarea creanțelor civile</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h4 class="accordion-heading">
+                <button class="accordion-trigger" aria-expanded="false">
+                  <span>Succesiuni</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <ul class="activity-list">
+                    <li>Deschiderea și dezbaterea succesiunilor</li>
+                    <li>Testamente și litigii succesorale</li>
+                    <li>Partaj judiciar și convențional</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h4 class="accordion-heading">
+                <button class="accordion-trigger" aria-expanded="false">
+                  <span>Litigii de Muncă</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+              </h4>
+              <div class="accordion-panel">
+                <div class="accordion-panel-inner">
+                  <ul class="activity-list">
+                    <li>Contestarea deciziilor de concediere</li>
+                    <li>Litigii privind drepturile salariale</li>
+                    <li>Redactarea contractelor individuale de muncă</li>
+                    <li>Reprezentare în conflicte de muncă</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="activity-grid activity-grid--secondary">
       <article class="activity-card reveal d3">
         <div class="activity-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="10" y="6" width="28" height="36"/>
-            <path d="M16 14h16 M16 22h16 M16 30h10"/>
-            <path d="M30 36 l4 4 l8 -8" opacity="0.7"/>
+            <rect pathLength="1" x="10" y="6" width="28" height="36"/>
+            <path pathLength="1" d="M16 14h16 M16 22h16 M16 30h10"/>
+            <path pathLength="1" d="M30 36 l4 4 l8 -8" opacity="0.7"/>
           </svg>
         </div>
         <div class="activity-domain">Drept Comercial</div>
@@ -542,6 +460,47 @@
           <li>Consultanță în tranzacții și achiziții</li>
         </ul>
       </article>
+
+      <article class="activity-card reveal d4">
+        <div class="activity-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <path pathLength="1" d="M6 18 L24 6 L42 18 Z"/>
+            <path pathLength="1" d="M10 18v20 M18 18v20 M30 18v20 M38 18v20"/>
+            <path pathLength="1" d="M6 42h36"/>
+          </svg>
+        </div>
+        <div class="activity-domain">Drept Administrativ</div>
+        <h3 class="activity-title">Contencios Administrativ</h3>
+        <p class="activity-text">Asistență și reprezentare în litigii cu autoritățile publice, contestarea actelor administrative și apărarea drepturilor în raport cu instituțiile statului.</p>
+        <ul class="activity-list">
+          <li>Contestarea actelor administrative</li>
+          <li>Litigii privind autorizațiile și avizele</li>
+          <li>Reprezentare în achiziții publice</li>
+          <li>Contestații privind funcția publică</li>
+          <li>Acțiuni împotriva instituțiilor publice</li>
+        </ul>
+      </article>
+
+      <article class="activity-card reveal d5">
+        <div class="activity-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+            <circle pathLength="1" cx="24" cy="24" r="17"/>
+            <path pathLength="1" d="M17 31 L31 17"/>
+            <circle cx="19" cy="19" r="2.4" fill="currentColor" stroke="none"/>
+            <circle cx="29" cy="29" r="2.4" fill="currentColor" stroke="none"/>
+          </svg>
+        </div>
+        <div class="activity-domain">Drept Fiscal</div>
+        <h3 class="activity-title">Contencios Fiscal</h3>
+        <p class="activity-text">Consultanță și reprezentare în materie fiscală, de la contestarea actelor de impunere până la litigii privind obligațiile față de stat.</p>
+        <ul class="activity-list">
+          <li>Contestarea deciziilor de impunere</li>
+          <li>Litigii privind TVA și impozitele</li>
+          <li>Rambursări și restituiri de taxe</li>
+          <li>Eșalonări și facilități fiscale</li>
+          <li>Reprezentare în inspecții fiscale</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
@@ -553,6 +512,7 @@
     <h2 class="section-title reveal d1">Parcursul <em>carierei</em></h2>
 
     <div class="flow">
+      <div class="flow-fill" id="flowFill" aria-hidden="true"></div>
       <ol class="flow-list">
         <li class="flow-item" data-side="left">
           <span class="flow-node" aria-hidden="true"></span>
@@ -722,6 +682,10 @@
           Programările se realizează telefonic
           <span class="btn-arrow" aria-hidden="true"></span>
         </a>
+        <div class="status-badge" id="statusBadge">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">Se verifică programul&hellip;</span>
+        </div>
       </aside>
     </div>
   </div>
@@ -745,6 +709,7 @@
           <li><a href="#parcurs">Parcurs</a></li>
           <li><a href="#civic">Implicare</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="confidentialitate.html">Politica de Confidențialitate</a></li>
         </ul>
       </nav>
     </div>
@@ -796,6 +761,43 @@ if (!location.hash) window.scrollTo(0, 0);
       setTimeout(() => el.classList.add('in'), 200 + i * 110);
     });
   });
+
+  /* ---- Hero seal — subtle cursor tilt (desktop, fine pointer only) ---- */
+  const sealZone = document.querySelector('.hero-right');
+  const sealSvg = document.querySelector('.hero-seal svg');
+  if (sealZone && sealSvg && !reduce && window.matchMedia('(pointer: fine)').matches) {
+    const maxTilt = 8;
+    sealZone.addEventListener('mousemove', (e) => {
+      const rect = sealZone.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      sealSvg.style.transform = `rotateY(${x * maxTilt}deg) rotateX(${y * -maxTilt}deg)`;
+    });
+    sealZone.addEventListener('mouseleave', () => {
+      sealSvg.style.transform = '';
+    });
+  }
+
+  /* ---- Live availability badge — Romania (Europe/Bucharest) business hours ---- */
+  const statusBadge = document.getElementById('statusBadge');
+  if (statusBadge) {
+    try {
+      const fmt = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Bucharest', hourCycle: 'h23', hour: 'numeric', weekday: 'short'
+      });
+      const parts = fmt.formatToParts(new Date());
+      const hour = parseInt(parts.find(p => p.type === 'hour').value, 10);
+      const weekday = parts.find(p => p.type === 'weekday').value;
+      const isWeekday = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].includes(weekday);
+      const isOpen = isWeekday && hour >= 8 && hour < 17;
+      statusBadge.classList.toggle('is-offline', !isOpen);
+      statusBadge.querySelector('.status-text').textContent = isOpen
+        ? 'Disponibil acum pentru consultații'
+        : 'În afara programului de lucru';
+    } catch (err) {
+      statusBadge.remove();
+    }
+  }
 
   /* ---- Number counters — robust, never gets stuck on "0" ----
      Failure modes addressed:
@@ -927,8 +929,40 @@ if (!location.hash) window.scrollTo(0, 0);
   /* ---- Scroll progress + nav hide-on-scroll-down ---- */
   const nav = document.getElementById('siteNav');
   const progress = document.getElementById('scrollProgress');
+  const scrollCue = document.querySelector('.scroll-cue');
+  if (scrollCue) setTimeout(() => scrollCue.classList.add('scroll-cue-in'), 1800);
   let lastY = window.scrollY;
   let ticking = false;
+
+  /* ---- Nav goes solid only once the hero has fully scrolled past ---- */
+  const heroEl = document.getElementById('hero');
+  if (heroEl) {
+    const navH = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 0;
+    const heroObs = new IntersectionObserver(([entry]) => {
+      nav.classList.toggle('solid', !entry.isIntersecting);
+    }, { rootMargin: `-${navH}px 0px 0px 0px`, threshold: 0 });
+    heroObs.observe(heroEl);
+  }
+
+  /* ---- Timeline scroll-fill (Parcurs) ---- */
+  const flowFill = document.getElementById('flowFill');
+  const flowNodes = flow ? flow.querySelectorAll('.flow-node') : [];
+  if (flowFill && reduce && flow) {
+    flowFill.style.height = flow.getBoundingClientRect().height + 'px';
+    flowNodes.forEach(node => node.classList.add('filled'));
+  }
+  const updateFlowFill = () => {
+    if (!flow || !flowFill || reduce) return;
+    const rect = flow.getBoundingClientRect();
+    const readLine = window.innerHeight * 0.6;
+    const pct = Math.max(0, Math.min(1, (readLine - rect.top) / rect.height));
+    const fillPx = pct * rect.height;
+    flowFill.style.height = fillPx + 'px';
+    flowNodes.forEach(node => {
+      const nodeTop = node.getBoundingClientRect().top - rect.top;
+      node.classList.toggle('filled', nodeTop <= fillPx);
+    });
+  };
 
   const onScroll = () => {
     const y = window.scrollY;
@@ -936,19 +970,21 @@ if (!location.hash) window.scrollTo(0, 0);
     const p = h > 0 ? (y / h) * 100 : 0;
     progress.style.setProperty('--p', p + '%');
 
-    if (y > 80) nav.classList.add('solid'); else nav.classList.remove('solid');
+    if (scrollCue) scrollCue.classList.toggle('scroll-cue-hidden', y > 10);
 
-    if (y > lastY && y > 200) {
+    if (y > lastY && y > 40) {
       nav.classList.add('hidden');
     } else {
       nav.classList.remove('hidden');
     }
     lastY = y;
+    updateFlowFill();
     ticking = false;
   };
   window.addEventListener('scroll', () => {
     if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
   }, { passive: true });
+  updateFlowFill();
 
   /* ---- Scrollspy for nav active state ---- */
   const sections = ['hero','despre','activitate','parcurs','civic','contact']
@@ -968,6 +1004,16 @@ if (!location.hash) window.scrollTo(0, 0);
     });
   }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
   sections.forEach(s => so.observe(s));
+
+  /* ---- Civil-law accordion (Drept Civil sub-domains) ---- */
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion-item');
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      item.classList.toggle('open', !expanded);
+    });
+  });
 
   /* ---- Mobile drawer ---- */
   const navToggle = nav.querySelector('.nav-toggle');

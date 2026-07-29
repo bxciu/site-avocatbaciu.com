@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
-<meta name="description" content="Politica de confidențialitate a Cabinetului Individual de Avocatură Simona Maria Baciu — ce date colectăm, cum le folosim și care sunt drepturile dumneavoastră conform GDPR." />
-<meta name="theme-color" content="#003D2B" />
+<meta name="description" content="Politica de confidențialitate a Cabinetului Individual de Avocatură Simona Maria Baciu – ce date colectăm, cum le folosim și care sunt drepturile dumneavoastră conform GDPR." />
+<meta name="theme-color" content="#00261A" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.avocatbaciu.com/confidentialitate.html" />
-<title>Politica de Confidențialitate — Simona Maria Baciu, Avocat Turda</title>
+<title>Politica de Confidențialitate – Simona Maria Baciu, Avocat Turda</title>
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
 
@@ -86,8 +86,8 @@
     <div class="legal-block">
       <h2>4. Servicii terțe folosite de site</h2>
       <ul>
-        <li><strong>Google Fonts</strong> — fonturile folosite pe site (Playfair Display, EB Garamond, Cormorant Garamond) sunt încărcate de la serverele Google Fonts. Această încărcare presupune ca browserul dumneavoastră să transmită către Google adresa IP și alte date tehnice standard de conexiune (user-agent), conform practicii obișnuite pentru orice resursă externă dintr-o pagină web. Nu avem control asupra modului în care Google prelucrează aceste date; puteți consulta <a class="ulink" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politica de confidențialitate Google</a> pentru detalii.</li>
-        <li><strong>Google Maps</strong> — site-ul conține linkuri către Google Maps pentru localizarea sediului cabinetului. Accesarea acestor linkuri vă redirecționează către site-ul Google Maps, unde se aplică politica de confidențialitate proprie Google.</li>
+        <li><strong>Google Fonts</strong> – fonturile folosite pe site (Playfair Display, EB Garamond, Cormorant Garamond) sunt încărcate de la serverele Google Fonts. Această încărcare presupune ca browserul dumneavoastră să transmită către Google adresa IP și alte date tehnice standard de conexiune (user-agent), conform practicii obișnuite pentru orice resursă externă dintr-o pagină web. Nu avem control asupra modului în care Google prelucrează aceste date; puteți consulta <a class="ulink" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">politica de confidențialitate Google</a> pentru detalii.</li>
+        <li><strong>Google Maps</strong> – site-ul conține linkuri către Google Maps pentru localizarea sediului cabinetului. Accesarea acestor linkuri vă redirecționează către site-ul Google Maps, unde se aplică politica de confidențialitate proprie Google.</li>
       </ul>
     </div>
 
@@ -142,13 +142,14 @@
       <ul class="footer-list">
         <li><a class="ulink" href="https://www.google.com/maps/search/?api=1&query=Str.+Avram+Iancu+nr.+7,+Turda,+Cluj,+Romania" target="_blank" rel="noopener noreferrer">Str. Avram Iancu nr. 7, ap. 1</a></li>
         <li><a class="ulink" href="https://www.google.com/maps/search/?api=1&query=Str.+Avram+Iancu+nr.+7,+Turda,+Cluj,+Romania" target="_blank" rel="noopener noreferrer">Turda, jud. Cluj, România</a></li>
-        <li><a class="ulink" href="index.html#contact">Contact cabinet</a></li>
+        <li><a class="ulink contact-obf" data-t="tel"></a></li>
+        <li><a class="ulink contact-obf" data-t="mail"></a></li>
       </ul>
     </div>
   </div>
   <div class="footer-divider"></div>
   <div class="footer-bottom">
-    <div class="footer-meta">© <span id="yr">2026</span> Cabinet de Avocatura S.M. Baciu</div>
+    <div class="footer-meta">© <span id="yr">2026</span> Cabinet de Avocatură S.M. Baciu</div>
     <div class="footer-meta">Baroul Cluj</div>
     <div class="footer-meta footer-made-by"><a href="https://fxlstudio.com" target="_blank" rel="noopener noreferrer">Made by FXL</a></div>
   </div>
@@ -226,6 +227,19 @@
       }
     });
   }
+})();
+</script>
+<script>
+(function(){
+  var ph = atob('MDc0NDQ3NjY3NA==');
+  var em = atob('YXZvY2F0YmFjaXVAeWFob28uY29t');
+  var phF = ph.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
+  document.querySelectorAll('.contact-obf').forEach(function(el){
+    var t = el.getAttribute('data-t');
+    if(t === 'tel'){ el.href = 'tel:' + ph; el.textContent = phF; }
+    else if(t === 'mail'){ el.href = 'mailto:' + em; el.textContent = em; }
+    else if(t === 'tel-href-only'){ el.href = 'tel:' + ph; }
+  });
 })();
 </script>
 </body>

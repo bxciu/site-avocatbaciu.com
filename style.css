@@ -82,10 +82,19 @@
      1. RESET & BASE
      ================================================================ */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overscroll-behavior: none; }
+  /* Fundalul lui <html> devine culoarea canvas-ului documentului. Safari pe macOS
+     coloreaza bara de sus dupa aceasta valoare (ignora <meta name="theme-color">).
+     <body> ramane crem si acopera integral pagina, deci aspectul nu se schimba. */
+  html {
+    background: var(--green-deepest);
+    scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overscroll-behavior: none;
+  }
 
   body {
-    background: var(--cream);
+    /* Verde, nu crem: Safari pe macOS coloreaza bara de sus dupa fundalul
+       documentului (ignora <meta name="theme-color">). Cremul e mutat pe
+       #continut-principal, care acopera integral zona de continut. */
+    background: var(--green-deepest);
     overscroll-behavior: none;
     min-height: 100vh;
     color: var(--text-dark);
@@ -100,6 +109,11 @@
     text-rendering: optimizeLegibility;
     font-feature-settings: "kern", "liga", "calt", "onum";
   }
+
+  /* Baza crem a continutului, mutata aici de pe <body>. Sectiunile sunt oricum
+     opace si acopera tot <main>, deci asta e doar plasa de siguranta impotriva
+     unei scurgeri de verde intre ele. */
+  #continut-principal { background: var(--cream); }
 
   /* Gradarea de culoare sta pe fiecare sectiune, nu pe <main>.
      Un filter creeaza o render surface cat elementul; pe <main> aceea e inalta
@@ -250,11 +264,15 @@
     font-size: 0.95rem; color: var(--gold-light);
     letter-spacing: 0.18em; text-transform: uppercase;
     font-weight: 600;
+    /* Același auriu ca „BACIU" din hero */
+    background: var(--glint-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
     opacity: 0; pointer-events: none;
-    transition: color 0.3s, opacity 0.35s var(--ease-soft);
+    transition: filter 0.3s, opacity 0.35s var(--ease-soft);
   }
   nav.site-nav.solid .nav-brand { opacity: 1; pointer-events: auto; }
-  .nav-brand:hover { color: var(--gold); }
+  .nav-brand:hover { filter: brightness(1.12); }
   .nav-brand-mark {
     width: 28px; height: 28px;
     display: inline-flex; align-items: center; justify-content: center;
@@ -359,7 +377,7 @@
     color: var(--white);
     line-height: 1.0;
     letter-spacing: -0.015em;
-    margin-bottom: calc(0.85rem + 2.3px);
+    margin-bottom: 2.2rem;
     text-shadow: 0 2px 30px rgba(0, 0, 0, 0.25);
   }
   .hero-name em {
@@ -379,14 +397,24 @@
     -webkit-text-fill-color: transparent;
   }
 
-  .hero-subtitle {
+  /* Al doilea rand din h1 — locul unde titlul paginii isi confirma subiectul.
+     Sta in interiorul .hero-name, deci trebuie sa anuleze explicit ce impune
+     numele: umbra de 30px sub text de 18px iese noroi, iar line-height 1.0 si
+     letter-spacing negativ sunt calibrate pentru 70px, nu pentru randul mic. */
+  .hero-h1-sub {
+    display: block;
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.05rem, 1.4vw, 1.3rem);
-    color: var(--cream);
-    margin-left: 5px;
-    margin-bottom: 2.2rem;
+    font-weight: 700;
+    line-height: 1.72;
     letter-spacing: 0.06em;
-    font-weight: 600;
+    color: var(--cream);
+    /* 700 e greutatea maxima a lui Cormorant Garamond. Ingrosarea in plus vine
+       din contur, acelasi truc pe care il foloseste deja .hero-eyebrow. */
+    -webkit-text-stroke: 0.3px var(--cream);
+    text-shadow: none;
+    margin-left: 5px;
+    margin-top: calc(0.55rem + 11px);
     opacity: 0; transform: translateY(10px);
     animation: fadeUp 0.8s var(--ease-soft) forwards 0.95s;
   }
@@ -1200,7 +1228,26 @@
   }
 
   /* ================================================================
-     11. CONTACT
+     11. ÎNTREBĂRI FRECVENTE
+     ================================================================ */
+  /* Reia componenta .accordion-item din secțiunea Activitate — aceleași
+     stări, alt container: o singură coloană, centrată pe lățimea textului. */
+  #intrebari { background: var(--white); }
+  .faq-accordion {
+    display: flex; flex-direction: column; gap: 0.6rem;
+    max-width: 780px;
+    margin-top: 2.6rem;
+  }
+  .faq-answer {
+    color: var(--text-mid);
+    font-size: 0.99rem;
+    line-height: 1.78;
+    padding-bottom: 1.1rem;
+    margin: 0;
+  }
+
+  /* ================================================================
+     12. CONTACT
      ================================================================ */
   #contact { background: var(--cream-dark); }
   .contact-heading-block {
@@ -1355,7 +1402,7 @@
   }
 
   /* ================================================================
-     12. FOOTER
+     13. FOOTER
      ================================================================ */
   footer.site-footer {
     background: var(--ink);
@@ -1438,7 +1485,7 @@
   }
 
   /* ================================================================
-     13. KEYFRAMES & UTILITIES
+     14. KEYFRAMES & UTILITIES
      ================================================================ */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(18px); }
@@ -1446,7 +1493,7 @@
   }
 
   /* ================================================================
-     14. RESPONSIVE — TABLET (<= 1024)
+     15. RESPONSIVE — TABLET (<= 1024)
      ================================================================ */
   @media (max-width: 1024px) {
     #hero { grid-template-columns: 1fr; }
@@ -1461,7 +1508,7 @@
   }
 
   /* ================================================================
-     15. RESPONSIVE — MOBILE (<= 860)
+     16. RESPONSIVE — MOBILE (<= 860)
      ================================================================ */
   @media (max-width: 860px) {
     body { font-size: 17px; line-height: 1.7; }
@@ -1490,6 +1537,9 @@
     .nav-toggle { display: inline-flex; }
 
     .hero-left { padding: 4rem 1.5rem 5rem; text-align: center; align-items: center; }
+    /* "Avocat definitiv · Baroul Cluj" masoara 318px la 0.16em, iar pe ecrane
+       de 360px raman doar 312px intre padding-uri. 0.12em il aduce la 299px. */
+    .hero-eyebrow { letter-spacing: 0.12em; }
     .hero-stats, .hero-divider, .hero-cta-row { align-self: center; }
     .hero-divider { margin-left: auto; margin-right: auto; }
     .hero-stats { grid-template-columns: repeat(3, 1fr); width: 100%; max-width: 420px; }
@@ -1507,6 +1557,10 @@
     .civic-item { grid-template-columns: 1fr; gap: 0.7rem; padding: 1.6rem 0; }
     .civic-item:hover { padding-left: 0.4rem; }
     .contact-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+    /* Decalajul optic negativ e calibrat pentru latimea de desktop. Pe mobil
+       padding-ul sectiunii e de 24px, iar -34px scoate blocul din ecran —
+       titlul italic mai adauga ~14px de depasire a glifei "P". */
+    .contact-heading-block { margin-left: 0; }
     .footer-top { grid-template-columns: 1fr; }
     .footer-col--3 { grid-column: auto; }
     .footer-bottom { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.3rem; }
@@ -1524,7 +1578,7 @@
   }
 
   /* ================================================================
-     16. REDUCED MOTION
+     17. REDUCED MOTION
      ================================================================ */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1662,7 +1716,7 @@
   }
 
   /* ================================================================
-     17. PRINT
+     18. PRINT
      ================================================================ */
   @media print {
     nav, .scroll-cue, .scroll-progress, .btn, .grain { display: none !important; }

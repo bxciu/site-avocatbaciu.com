@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
-<meta name="description" content="Politica de confidențialitate a Cabinetului Individual de Avocatură Simona Maria Baciu – ce date colectăm, cum le folosim și care sunt drepturile dumneavoastră conform GDPR." />
+<meta name="description" content="Politica de confidențialitate a Cabinetului de Avocat Simona Maria Baciu – ce date colectăm, cum le folosim și care sunt drepturile dumneavoastră conform GDPR." />
 <meta name="theme-color" content="#00261A" />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://www.avocatbaciu.com/confidentialitate.html" />
-<title>Politica de Confidențialitate – Simona Maria Baciu, Avocat Turda</title>
+<title>Politica de Confidențialitate – Avocat Simona Maria Baciu</title>
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
 
@@ -18,8 +18,22 @@
 
 <link rel="stylesheet" href="style.css" />
 <style>
+  /* Pagina e albă de sus până jos - nu are hero întunecat ca index.html,
+     deci nav-ul transparent din starea initiala ar fi invizibil. Aici e
+     solid din primul cadru. Ascunderea la scroll in jos ramane (.hidden). */
+  nav.site-nav {
+    background: rgba(0, 38, 26, 0.96);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border-color: rgba(201, 168, 108, 0.36);
+  }
+  nav.site-nav .nav-brand { opacity: 1; pointer-events: auto; }
+
   .legal-page { background: var(--white); }
-  .legal-page .section-inner { max-width: 860px; }
+  .legal-page .section-inner {
+    max-width: 860px;
+    padding-top: calc(var(--nav-h) + clamp(3rem, 6vw, 6rem));
+  }
   .legal-block { margin-bottom: 2.8rem; }
   .legal-block h2 {
     font-family: 'Playfair Display', serif;
@@ -29,7 +43,32 @@
     font-weight: 700;
   }
   .legal-block p, .legal-block li { color: var(--text-mid); margin-bottom: 0.9rem; }
-  .legal-block ul { padding-left: 1.4rem; margin-bottom: 0.9rem; }
+
+  /* style.css scoate bulinele global (ul { list-style: none }), asa ca
+     listele legale isi pun singure marcajul: romb auriu + hairline care
+     leaga itemii intr-un singur bloc, in loc de paragrafe razlete. */
+  .legal-block ul {
+    margin: 0.4rem 0 1.5rem 0.15rem;
+    padding-left: 1.15rem;
+    border-left: 1px solid rgba(196, 154, 53, 0.25);
+  }
+  .legal-block li {
+    position: relative;
+    padding-left: 1.35rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.72;
+  }
+  .legal-block li:last-child { margin-bottom: 0; }
+  .legal-block li::before {
+    content: "";
+    position: absolute;
+    left: 0.1rem;
+    top: 0.72em;
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    transform: rotate(45deg);
+  }
   .legal-updated {
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.9rem;
@@ -69,13 +108,13 @@
 
     <div class="legal-block">
       <h2>1. Cine suntem</h2>
-      <p>Acest site (avocatbaciu.com) este operat de <strong>Cabinetul Individual de Avocatură Simona Maria Baciu</strong>, membră a Baroului Cluj din 1 martie 2003, cu sediul în Turda, Str. Avram Iancu nr. 7, ap. 1, jud. Cluj, România.</p>
+      <p>Acest site (avocatbaciu.com) este operat de <strong>Cabinetul de Avocat Simona Maria Baciu</strong>, membru al Baroului Cluj din 1 martie 2003, cu sediul în Turda, Str. Avram Iancu nr. 7, ap. 1, jud. Cluj, România.</p>
       <p>Pentru orice întrebare legată de această politică sau de datele dumneavoastră, ne puteți contacta la adresa de email afișată în secțiunea de contact a site-ului sau telefonic, la numărul afișat pe site.</p>
     </div>
 
     <div class="legal-block">
       <h2>2. Ce date colectăm</h2>
-      <p>Acest site este o pagină de prezentare statică și nu conține niciun formular de contact care să trimită date către un server. Nu colectăm, nu stocăm și nu prelucrăm automat nicio dată cu caracter personal prin intermediul site-ului.</p>
+      <p>Acest site este o pagină de prezentare statică și nu conține niciun formular de contact care să trimită date către un server. Nu colectăm, nu stocăm și nu prelucrăm niciodată date cu caracter personal prin intermediul site-ului.</p>
       <p>Singurele date pe care le primim sunt cele pe care alegeți să ni le transmiteți direct, din proprie inițiativă, atunci când ne contactați prin telefon sau email (de exemplu numele dumneavoastră, numărul de telefon, adresa de email sau conținutul mesajului). Aceste date sunt folosite exclusiv pentru a răspunde solicitării dumneavoastră și pentru eventuala reprezentare juridică ulterioară, cu acordul dumneavoastră.</p>
     </div>
 
@@ -123,7 +162,7 @@
   <div class="footer-top">
     <div class="footer-brand-block">
       <div class="footer-brand-name">Simona Maria <span class="baciu-gold">Baciu</span></div>
-      <p>Cabinet de Avocatură, membră a Baroului Cluj din 1 martie 2003. Drept civil, succesiuni, carte funciară și drept comercial.</p>
+      <p>Cabinet de Avocat, membru al Baroului Cluj din 1 martie 2003. Drept civil, succesiuni, carte funciară și drept comercial.</p>
     </div>
     <div class="footer-col footer-col--2">
       <div class="footer-col-title">Navigare</div>
@@ -143,14 +182,14 @@
       <ul class="footer-list">
         <li><a class="ulink" href="https://www.google.com/maps/search/?api=1&query=Str.+Avram+Iancu+nr.+7,+Turda,+Cluj,+Romania" target="_blank" rel="noopener noreferrer">Str. Avram Iancu nr. 7, ap. 1</a></li>
         <li><a class="ulink" href="https://www.google.com/maps/search/?api=1&query=Str.+Avram+Iancu+nr.+7,+Turda,+Cluj,+Romania" target="_blank" rel="noopener noreferrer">Turda, jud. Cluj, România</a></li>
-        <li><a class="ulink contact-obf" data-t="tel"></a></li>
+        <li><a class="ulink" href="tel:+40744476674">+40 744 476 674</a></li>
         <li><a class="ulink contact-obf" data-t="mail"></a></li>
       </ul>
     </div>
   </div>
   <div class="footer-divider"></div>
   <div class="footer-bottom">
-    <div class="footer-meta">© <span id="yr">2026</span> Cabinet de Avocatură S.M. Baciu</div>
+    <div class="footer-meta">© <span id="yr">2026</span> Cabinet de Avocat S.M. Baciu</div>
     <div class="footer-meta">Baroul Cluj</div>
     <div class="footer-meta footer-made-by"><a href="https://fxlstudio.com" target="_blank" rel="noopener noreferrer">Made by FXL</a></div>
   </div>
@@ -162,7 +201,9 @@
 
   document.getElementById('yr').textContent = new Date().getFullYear();
 
-  /* ---- Scroll progress + nav hide-on-scroll-down ---- */
+  /* ---- Scroll progress + nav hide-on-scroll-down ----
+     Nav-ul e solid din CSS pe pagina asta (nu are hero intunecat sub el),
+     deci comutam doar .hidden, nu si .solid. */
   const nav = document.getElementById('siteNav');
   const progress = document.getElementById('scrollProgress');
   let lastY = window.scrollY;
@@ -173,8 +214,6 @@
     const h = document.documentElement.scrollHeight - window.innerHeight;
     const p = h > 0 ? (y / h) * 100 : 0;
     progress.style.setProperty('--p', p + '%');
-
-    if (y > 80) nav.classList.add('solid'); else nav.classList.remove('solid');
 
     if (y > lastY && y > 200) {
       nav.classList.add('hidden');
@@ -231,15 +270,15 @@
 })();
 </script>
 <script>
+/* Identic cu index.html: doar e-mailul ramane obfuscat. Telefonul e scris
+   direct in HTML — e NAP vizibil si ramane functional fara JS. */
 (function(){
-  var ph = atob('MDc0NDQ3NjY3NA==');
   var em = atob('YXZvY2F0YmFjaXVAeWFob28uY29t');
-  var phF = ph.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
   document.querySelectorAll('.contact-obf').forEach(function(el){
-    var t = el.getAttribute('data-t');
-    if(t === 'tel'){ el.href = 'tel:' + ph; el.textContent = phF; }
-    else if(t === 'mail'){ el.href = 'mailto:' + em; el.textContent = em; }
-    else if(t === 'tel-href-only'){ el.href = 'tel:' + ph; }
+    if(el.getAttribute('data-t') === 'mail'){
+      el.href = 'mailto:' + em;
+      el.textContent = em;
+    }
   });
 })();
 </script>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+<meta name="theme-color" content="#00261A" />
+
+<!-- O pagina de eroare nu are ce cauta in rezultatele cautarii: continutul ei
+     nu raspunde niciunei interogari. `follow` ramane, ca linkurile de mai jos
+     sa fie parcurse si sa duca robotul inapoi in site.
+     Fara `canonical`: un 404 nu se auto-canonicalizeaza si nu trimite catre
+     alta pagina — ar semnala ca acest URL are un echivalent valid, si nu are.
+     Fara JSON-LD: nu declaram entitati pe un URL care nu exista. -->
+<meta name="robots" content="noindex, follow" />
+
+<title>Pagină negăsită – Cabinet Avocat Simona Maria Baciu</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Identic cu celelalte pagini: aceleasi 11 variante, ca sa se refoloseasca din cache. -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600;1,700&family=EB+Garamond:ital,wght@0,500;0,600;1,500&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+<style>
+  /* Pagina ocupa tot ecranul: nu are continut sub ea, iar un footer plutind
+     la mijloc pe un desktop inalt arata a pagina rupta, nu a eroare tratata. */
+  .err-page {
+    background:
+      radial-gradient(120% 100% at 30% 0%, var(--green-mid) 0%, var(--green-dark) 50%, var(--green-deepest) 100%);
+    color: var(--cream);
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex; align-items: center;
+    padding: calc(var(--nav-h) + 0.5rem) 0 1.6rem;
+  }
+  /* Containerul isi pastreaza latimea standard, ca textul sa inceapa pe aceeasi
+     linie verticala ca in restul site-ului. Ingustarea se face pe blocurile de
+     text, nu pe container — altfel tot continutul ajunge centrat in pagina.
+     `width: 100%` e obligatoriu: ca element flex, .section-inner s-ar stramta
+     la latimea continutului, iar `margin: 0 auto` l-ar centra in pagina. */
+  .err-inner { width: 100%; }
+
+  .err-code {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.4rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    background: var(--glint-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+  }
+  .err-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.18;
+    margin-bottom: 0.9rem;
+  }
+  .err-title em {
+    font-style: italic; font-weight: 700;
+    background: var(--glint-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .err-text {
+    font-size: 1.03rem;
+    line-height: 1.8;
+    color: rgba(246, 240, 228, 0.86);
+    max-width: 52ch;
+    margin-bottom: 1.9rem;
+  }
+  .err-cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.4rem; }
+
+  .err-links-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+  .err-links {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.4rem 1.8rem;
+    max-width: 620px;
+    border-top: 1px solid rgba(212, 180, 106, 0.22);
+    padding-top: 1.2rem;
+  }
+  .err-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.99rem;
+    display: inline-block;
+    padding: 0.18rem 0;
+    border-bottom: 1px solid transparent;
+    transition: color 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+  }
+  .err-links a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+  @media (max-width: 860px) {
+    .err-cta-row .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#continut-principal" class="skip-link">Sari la conținut</a>
+
+<!-- ============ NAV ============ -->
+<nav class="site-nav" id="siteNav" aria-label="Navigare principală">
+  <a class="nav-brand" href="index.html#hero">Simona Maria Baciu</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html#despre">Despre</a></li>
+    <li><a href="index.html#activitate">Activitate</a></li>
+    <li><a href="index.html#parcurs">Parcurs</a></li>
+    <li><a href="index.html#civic">Implicare</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false" aria-controls="navLinks">
+    <span class="nav-toggle-bars"><span></span><span></span><span></span></span>
+  </button>
+</nav>
+
+<main id="continut-principal">
+<section class="err-page">
+  <div class="section-inner err-inner">
+    <p class="err-code" aria-hidden="true">404</p>
+    <h1 class="err-title">Pagina căutată <em>nu există</em></h1>
+    <p class="err-text">
+      Adresa este greșită sau pagina a fost mutată. Cabinetul este în continuare
+      disponibil — folosiți linkurile de mai jos sau contactați-ne direct.
+    </p>
+
+    <div class="err-cta-row">
+      <a class="btn" href="index.html">Pagina principală <span class="btn-arrow" aria-hidden="true"></span></a>
+      <a class="btn btn--ghost" href="index.html#contact">Contact <span class="btn-arrow" aria-hidden="true"></span></a>
+    </div>
+
+    <p class="err-links-title">Poate căutați</p>
+    <ul class="err-links">
+      <li><a href="index.html#despre">Despre cabinet</a></li>
+      <li><a href="index.html#activitate">Domenii de practică</a></li>
+      <li><a href="index.html#parcurs">Parcurs profesional</a></li>
+      <li><a href="index.html#civic">Implicare civică</a></li>
+      <li><a href="tel:+40744476674">+40 744 476 674</a></li>
+      <li><a href="confidentialitate.html">Confidențialitate</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<script>
+(() => {
+  'use strict';
+  /* Doar meniul mobil. Pagina nu se deruleaza, deci nu are nevoie de bara de
+     progres, de scrollspy sau de nav hide-on-scroll. */
+  const nav = document.getElementById('siteNav');
+  nav.classList.add('solid');
+
+  const navToggle = nav.querySelector('.nav-toggle');
+  if (!navToggle) return;
+  const navLinks = nav.querySelector('.nav-links');
+
+  const openMenu = () => {
+    nav.classList.add('open');
+    navToggle.setAttribute('aria-expanded', 'true');
+    const first = navLinks.querySelector('a');
+    if (first) first.focus();
+  };
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.focus();
+  };
+
+  navToggle.addEventListener('click', () => {
+    if (nav.classList.contains('open')) closeMenu(); else openMenu();
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  nav.addEventListener('keydown', e => {
+    if (!nav.classList.contains('open')) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+    if (e.key !== 'Tab') return;
+    const f = [...nav.querySelectorAll('a, button')].filter(el => !el.disabled);
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  });
+})();
+</script>
+</body>
+</html>

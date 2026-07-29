@@ -101,7 +101,13 @@
     font-feature-settings: "kern", "liga", "calt", "onum";
   }
 
-  main {
+  /* Gradarea de culoare sta pe fiecare sectiune, nu pe <main>.
+     Un filter creeaza o render surface cat elementul; pe <main> aceea e inalta
+     cat tot documentul, iar orice layer compozitat animat dinauntru (inelul
+     sigiliului) o forteaza sa fie redesenata la fiecare frame => jank pe tot
+     site-ul in Chrome. Rezultatul vizual e identic: cele 6 sectiuni sunt opace,
+     lipite si fara suprapuneri, deci fiecare pixel apartine exact uneia. */
+  main > section {
     filter: saturate(1.24) contrast(1.05);
   }
 
@@ -264,7 +270,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 0.92rem; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--white);
-    font-weight: 600;
+    font-weight: 700;
     padding: 0.5rem 0;
     transition: color 0.25s;
   }
@@ -308,6 +314,9 @@
     display: grid; grid-template-columns: 1.05fr 1fr;
     overflow: hidden; padding-top: var(--nav-h);
     color: var(--cream);
+    /* Nimic din hero nu picteaza in afara casetei (overflow e deja hidden),
+       deci invalidarea inelului rotativ nu trebuie sa se propage mai sus. */
+    contain: paint;
   }
 
   .hero-pattern {
@@ -331,11 +340,12 @@
 
   .hero-eyebrow {
     font-family: 'Cormorant Garamond', serif;
-    font-size: calc(0.882rem + 1px); letter-spacing: 0.28em; text-transform: uppercase;
+    font-size: calc(0.882rem + 1px); letter-spacing: 0.16em; text-transform: uppercase;
     margin-left: 5px;
     background: linear-gradient(180deg, var(--gold-pale) 0%, var(--gold) 65%, var(--gold-deep) 100%);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0.4px var(--gold);
     margin-bottom: 1.4rem;
     font-weight: 700;
     opacity: 0; transform: translateY(10px);
@@ -376,7 +386,7 @@
     margin-left: 5px;
     margin-bottom: 2.2rem;
     letter-spacing: 0.06em;
-    font-weight: 500;
+    font-weight: 600;
     opacity: 0; transform: translateY(10px);
     animation: fadeUp 0.8s var(--ease-soft) forwards 0.95s;
   }
@@ -417,6 +427,7 @@
     color: var(--btn-fg); background: var(--btn-bg);
     border: 1px solid var(--btn-bd);
     transition: transform 0.35s var(--ease-spring), box-shadow 0.4s;
+    will-change: transform;
   }
   .btn::before {
     content: ''; position: absolute; inset: 0;
@@ -507,17 +518,45 @@
     border-radius: 50%;
     filter: blur(8px);
   }
-  .hero-seal svg {
-    width: 100%; height: 100%; position: relative; z-index: 2;
+  /* Purtatorul tiltului la cursor (scris din JS). Tine transformul 3D separat
+     de sealIn (pe .hero-seal) si de rotatie (pe .ring-rotate). */
+  .seal-tilt {
+    position: absolute; inset: 0;
     transition: transform 0.4s var(--ease-out);
-    will-change: transform;
+    /* Fara will-change: ar fi un layer permanent pentru o tranzitie care apare
+       doar la hover. Daca tiltul devine sacadat, se pune din JS pe mouseenter. */
   }
 
-  .hero-seal .ring-rotate {
-    transform-origin: 250px 250px;
-    animation: rotate 60s linear infinite;
+  .hero-seal .seal-static {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    z-index: 2;
   }
-  @keyframes rotate { to { transform: rotate(360deg); } }
+
+  /* Inelul rotativ. Elementul animat e un DIV, nu un <g> din SVG: WebKit nu
+     poate promova continut din interiorul SVG-ului intr-un layer propriu, deci
+     un <g> animat re-rasterizeaza tot sigiliul pe main thread la fiecare frame.
+     Pe un box HTML, keyframes doar pe transform => animatie compozitata pe GPU. */
+  .hero-seal .ring-rotate {
+    position: absolute; inset: 0;
+    z-index: 3;
+    animation: rotate 60s linear infinite;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* Fara will-change: keyframes doar pe transform promoveaza automat in ambele
+       motoare, deci nu adauga nimic.
+       Fara transform-origin: pe un box patrat, 50% 50% implicit e deja centrul
+       (echivalentul lui 250px 250px in unitati SVG).
+       Fara translateZ(0): ar strica potrivirea listei de functii cu keyframe-ul,
+       iar rotate(360deg) s-ar descompune in matricea identitate => inelul
+       s-ar opri din rotit. */
+  }
+  .hero-seal .ring-rotate > svg { width: 100%; height: 100%; }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
 
   .hero-seal .seal-monogram {
     font-family: 'Playfair Display', serif;
@@ -530,7 +569,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-weight: 700;
     font-size: 16px; letter-spacing: 8px;
-    fill: url(#goldGrad);
+    fill: url(#goldGradRing);
     text-transform: uppercase;
   }
 
@@ -707,6 +746,7 @@
     transition: transform 0.5s var(--ease-soft),
                 box-shadow 0.5s var(--ease-soft),
                 border-color 0.4s;
+    will-change: transform;
   }
   .activity-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
@@ -906,6 +946,7 @@
     top: 0;
     width: 1px;
     height: 0;
+    contain: layout;
     transform: translateX(-0.5px);
     background: linear-gradient(to bottom,
                   rgba(196, 154, 53, 0) 0px,
@@ -930,7 +971,7 @@
     display: grid;
     grid-template-columns: 1fr 56px 1fr;
     align-items: center;
-    padding: 0.7rem 0;
+    padding: 0.3rem 0;
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 1.05s cubic-bezier(.22,.61,.28,1),
@@ -1162,9 +1203,16 @@
      11. CONTACT
      ================================================================ */
   #contact { background: var(--cream-dark); }
+  .contact-heading-block {
+    margin-top: -27px;
+    margin-left: -34px;
+  }
+  .contact-heading-block .section-label {
+    margin-bottom: 10px;
+  }
   .contact-heading {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    font-size: clamp(2.16rem, 4.05vw, 3.42rem);
     font-style: italic;
     font-weight: 700;
     color: var(--green-dark);
@@ -1214,6 +1262,8 @@
     padding: 2.6rem 2.3rem;
     color: var(--cream);
     overflow: hidden;
+    margin-top: -6px;
+    margin-left: 40px;
     transition: transform 0.5s var(--ease-soft), box-shadow 0.5s var(--ease-soft);
   }
   .contact-panel:hover {
@@ -1261,7 +1311,7 @@
     margin-top: 1.6rem;
     display: inline-flex; align-items: center; gap: 0.6rem;
     color: var(--gold-light); font-family: 'Cormorant Garamond', serif;
-    font-size: 0.84rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.84rem; letter-spacing: 0.08em; text-transform: uppercase;
     font-weight: 700;
     padding-bottom: 0.4rem;
     border-bottom: 1px solid var(--gold);

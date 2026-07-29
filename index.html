@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
-<meta name="description" content="Avocat în Turda, jud. Cluj — Cabinet Individual Simona Maria Baciu. Specializare în drept civil, succesiuni, carte funciară și drept comercial. Peste 22 de ani de experiență. Baroul Cluj." />
+<meta name="description" content="Avocat în Turda, jud. Cluj — Cabinet Individual Simona Maria Baciu. Specializare în drept civil, succesiuni, carte funciară și drept comercial. Peste 23 de ani de experiență. Baroul Cluj." />
 <meta name="theme-color" content="#003D2B" />
 <meta property="og:title" content="Simona Maria Baciu — Avocat | Baroul Cluj" />
-<meta property="og:description" content="Cabinet Individual de Avocatură. Peste 22 de ani de practică în drept civil și comercial. Turda, jud. Cluj." />
+<meta property="og:description" content="Cabinet Individual de Avocatură. Peste 23 de ani de practică în drept civil și comercial. Turda, jud. Cluj." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.avocatbaciu.com/" />
 <meta property="og:locale" content="ro_RO" />
@@ -27,7 +27,7 @@
 <meta name="ICBM" content="46.5693, 23.7884" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Avocat Turda | Simona Maria Baciu — Drept Civil și Comercial" />
-<meta name="twitter:description" content="Cabinet Individual de Avocatură în Turda, jud. Cluj. Peste 22 de ani de experiență. Baroul Cluj." />
+<meta name="twitter:description" content="Cabinet Individual de Avocatură în Turda, jud. Cluj. Peste 23 de ani de experiență. Baroul Cluj." />
 <title>Avocat Turda | Drept Civil și Comercial — Simona Maria Baciu</title>
 <link rel="icon" type="image/png" href="favicon.png" />
 <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
@@ -103,7 +103,7 @@
   "@id": "https://www.avocatbaciu.com/#person",
   "name": "Simona Maria Baciu",
   "jobTitle": "Avocat Definitiv",
-  "description": "Avocat definitiv membră a Baroului Cluj din 1 martie 2003, cu peste 22 de ani de experiență în drept civil și comercial.",
+  "description": "Avocat definitiv membră a Baroului Cluj din 1 martie 2003, cu peste 23 de ani de experiență în drept civil și comercial.",
   "url": "https://www.avocatbaciu.com",
   "image": "https://www.avocatbaciu.com/assets/images/og-twitter-card.jpeg",
   "telephone": "+40744476674",
@@ -237,50 +237,71 @@
   </div>
 
   <div class="hero-right">
-    <div class="hero-seal">
-      <div class="hero-seal-bg"></div>
-      <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sigiliu Cabinet S.M.B.">
-        <defs>
-          <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%"  stop-color="#E8D090"/>
-            <stop offset="65%" stop-color="#C49A35"/>
-            <stop offset="100%" stop-color="#9E7420"/>
-          </linearGradient>
-          <linearGradient id="glintGrad" x1="0" y1="0" x2="1" y2="0.27" gradientUnits="objectBoundingBox">
-            <stop offset="0%"   stop-color="#C49A35"/>
-            <stop offset="25%"  stop-color="#C49A35"/>
-            <stop offset="48%"  stop-color="#F5E9A0"/>
-            <stop offset="68%"  stop-color="#C49A35"/>
-            <stop offset="100%" stop-color="#C49A35"/>
-          </linearGradient>
-          <path id="circPath" d="M 250,250 m -195,0 a 195,195 0 1,1 390,0 a 195,195 0 1,1 -390,0"/>
-        </defs>
+    <div class="hero-seal" role="img" aria-label="Sigiliu Cabinet S.M.B.">
+      <div class="hero-seal-bg" aria-hidden="true"></div>
 
-        <!-- Outer rings -->
-        <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(201,168,108,0.28)" stroke-width="1"/>
-        <circle cx="250" cy="250" r="218" fill="none" stroke="rgba(201,168,108,0.45)" stroke-width="0.6"/>
-        <circle cx="250" cy="250" r="170" fill="none" stroke="rgba(201,168,108,0.36)" stroke-width="0.6"/>
-        <circle cx="250" cy="250" r="160" fill="none" stroke="rgba(201,168,108,0.18)" stroke-width="0.4"/>
+      <!-- Tilt carrier: primeste transformul 3D de la cursor (JS).
+           Separat de .hero-seal, care e ocupat de animatia sealIn (fill-mode
+           forwards bate stilul inline), si separat de .ring-rotate, unde o
+           animatie in curs pe transform ar suprascrie tiltul. -->
+      <div class="seal-tilt">
 
-        <!-- Rotating circular text -->
-        <g class="ring-rotate">
-          <text class="seal-circ-text">
-            <textPath href="#circPath" startOffset="0" textLength="1225" lengthAdjust="spacing">JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS &#8226; JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS</textPath>
-          </text>
-        </g>
+        <!-- Strat static: inele, monograma, linie, romburi -->
+        <svg class="seal-static" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="goldGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%"  stop-color="#E8D090"/>
+              <stop offset="65%" stop-color="#C49A35"/>
+              <stop offset="100%" stop-color="#9E7420"/>
+            </linearGradient>
+            <linearGradient id="glintGrad" x1="0" y1="0" x2="1" y2="0.27" gradientUnits="objectBoundingBox">
+              <stop offset="0%"   stop-color="#C49A35"/>
+              <stop offset="25%"  stop-color="#C49A35"/>
+              <stop offset="48%"  stop-color="#F5E9A0"/>
+              <stop offset="68%"  stop-color="#C49A35"/>
+              <stop offset="100%" stop-color="#C49A35"/>
+            </linearGradient>
+          </defs>
 
-        <!-- Center monogram -->
-        <text class="seal-monogram" x="250" y="285" text-anchor="middle" fill="url(#glintGrad)">SMB</text>
+          <!-- Outer rings -->
+          <circle cx="250" cy="250" r="230" fill="none" stroke="rgba(201,168,108,0.28)" stroke-width="1"/>
+          <circle cx="250" cy="250" r="218" fill="none" stroke="rgba(201,168,108,0.45)" stroke-width="0.6"/>
+          <circle cx="250" cy="250" r="170" fill="none" stroke="rgba(201,168,108,0.36)" stroke-width="0.6"/>
+          <circle cx="250" cy="250" r="160" fill="none" stroke="rgba(201,168,108,0.18)" stroke-width="0.4"/>
 
-        <!-- Underline -->
-        <line x1="195" y1="320" x2="305" y2="320" stroke="url(#goldGrad)" stroke-width="0.8"/>
+          <!-- Center monogram -->
+          <text class="seal-monogram" x="250" y="285" text-anchor="middle" fill="url(#glintGrad)">SMB</text>
 
-        <!-- Tiny diamonds -->
-        <g fill="url(#goldGrad)" opacity="0.85">
-          <path d="M 184 320 l 4 -4 l 4 4 l -4 4 z"/>
-          <path d="M 308 320 l 4 -4 l 4 4 l -4 4 z"/>
-        </g>
-      </svg>
+          <!-- Underline -->
+          <line x1="195" y1="320" x2="305" y2="320" stroke="url(#goldGrad)" stroke-width="0.8"/>
+
+          <!-- Tiny diamonds -->
+          <g fill="url(#goldGrad)" opacity="0.85">
+            <path d="M 184 320 l 4 -4 l 4 4 l -4 4 z"/>
+            <path d="M 308 320 l 4 -4 l 4 4 l -4 4 z"/>
+          </g>
+        </svg>
+
+        <!-- Strat rotativ. Rotatia sta pe DIV, nu pe un <g> din SVG: WebKit nu
+             promoveaza copiii SVG intr-un layer de compozitie, asa ca un <g>
+             animat forteaza re-rasterizarea intregului sigiliu la fiecare frame. -->
+        <div class="ring-rotate" aria-hidden="true">
+          <svg class="seal-ring" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="goldGradRing" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%"  stop-color="#E8D090"/>
+                <stop offset="65%" stop-color="#C49A35"/>
+                <stop offset="100%" stop-color="#9E7420"/>
+              </linearGradient>
+              <path id="ringPath" d="M 250,250 m -195,0 a 195,195 0 1,1 390,0 a 195,195 0 1,1 -390,0"/>
+            </defs>
+            <text class="seal-circ-text">
+              <textPath href="#ringPath" startOffset="0" textLength="1225" lengthAdjust="spacing">JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS &#8226; JUSTITIA &#8226; DEDICATIO &#8226; INTEGRITAS</textPath>
+            </text>
+          </svg>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -484,10 +505,9 @@
       <article class="activity-card reveal d5">
         <div class="activity-icon" aria-hidden="true">
           <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-            <circle pathLength="1" cx="24" cy="24" r="17"/>
-            <path pathLength="1" d="M17 31 L31 17"/>
-            <circle cx="19" cy="19" r="2.4" fill="currentColor" stroke="none"/>
-            <circle cx="29" cy="29" r="2.4" fill="currentColor" stroke="none"/>
+            <path pathLength="1" d="M13 35 L35 13"/>
+            <circle cx="16" cy="16" r="3.2" fill="currentColor" stroke="none"/>
+            <circle cx="32" cy="32" r="3.2" fill="currentColor" stroke="none"/>
           </svg>
         </div>
         <div class="activity-domain">Drept Fiscal</div>
@@ -558,7 +578,7 @@
           <span class="flow-node" aria-hidden="true"></span>
           <div class="flow-shift">
             <article class="flow-card">
-              <div class="flow-year">22+ ani</div>
+              <div class="flow-year">23+ ani</div>
               <h3 class="flow-event">Experiență acumulată</h3>
               <div class="flow-detail">Două decenii de practică juridică în județul Cluj și în aria de competență a județului Cluj.</div>
             </article>
@@ -606,8 +626,10 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" aria-label="Date de contact cabinet avocat Turda">
   <div class="section-inner">
-    <p class="section-label reveal">Contact</p>
-    <h2 class="contact-heading reveal reveal-left">Hai să vorbim.</h2>
+    <div class="contact-heading-block">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="contact-heading reveal reveal-left">Programați o consultație</h2>
+    </div>
 
     <div class="contact-grid">
       <div>
@@ -670,7 +692,7 @@
       </div>
 
       <aside class="contact-panel reveal reveal-right d2" aria-label="Date cabinet">
-        <div class="contact-panel-eyebrow">Cabinet</div>
+        <div class="contact-panel-eyebrow">Carte de vizită</div>
         <div class="contact-panel-heading">Cabinet Individual<br>de Avocatură</div>
         <div class="contact-panel-rule"></div>
         <div class="contact-panel-name">Simona Maria Baciu</div>
@@ -764,18 +786,44 @@ if (!location.hash) window.scrollTo(0, 0);
 
   /* ---- Hero seal — subtle cursor tilt (desktop, fine pointer only) ---- */
   const sealZone = document.querySelector('.hero-right');
-  const sealSvg = document.querySelector('.hero-seal svg');
-  if (sealZone && sealSvg && !reduce && window.matchMedia('(pointer: fine)').matches) {
+  const sealTilt = document.querySelector('.hero-seal .seal-tilt');
+  if (sealZone && sealTilt && !reduce && window.matchMedia('(pointer: fine)').matches) {
     const maxTilt = 8;
+    let sealRect = sealZone.getBoundingClientRect();
+    let sealTicking = false;
+    let pendingEvent = null;
+    window.addEventListener('resize', () => { sealRect = sealZone.getBoundingClientRect(); });
+    sealZone.addEventListener('mouseenter', () => { sealRect = sealZone.getBoundingClientRect(); });
     sealZone.addEventListener('mousemove', (e) => {
-      const rect = sealZone.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      sealSvg.style.transform = `rotateY(${x * maxTilt}deg) rotateX(${y * -maxTilt}deg)`;
+      pendingEvent = e;
+      if (!sealTicking) {
+        requestAnimationFrame(() => {
+          const x = (pendingEvent.clientX - sealRect.left) / sealRect.width - 0.5;
+          const y = (pendingEvent.clientY - sealRect.top) / sealRect.height - 0.5;
+          sealTilt.style.transform = `rotateY(${x * maxTilt}deg) rotateX(${y * -maxTilt}deg)`;
+          sealTicking = false;
+        });
+        sealTicking = true;
+      }
     });
     sealZone.addEventListener('mouseleave', () => {
-      sealSvg.style.transform = '';
+      sealTilt.style.transform = '';
     });
+  }
+
+  /* ---- Pause the hero seal's infinite ring rotation once it's off-screen.
+     The rotation is now a GPU-composited transform (see .ring-rotate), so it no
+     longer repaints — but an active CAAnimation still keeps the layer and the
+     display link alive, which costs battery and blocks GPU downclocking. ---- */
+  const sealEl = document.querySelector('.hero-seal');
+  const ringEls = document.querySelectorAll('.hero-seal .ring-rotate');
+  if (sealEl && ringEls.length) {
+    const ringObs = new IntersectionObserver(([entry]) => {
+      ringEls.forEach(el => {
+        el.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+      });
+    }, { threshold: 0 });
+    ringObs.observe(sealEl);
   }
 
   /* ---- Live availability badge — Romania (Europe/Bucharest) business hours ---- */
@@ -792,7 +840,7 @@ if (!location.hash) window.scrollTo(0, 0);
       const isOpen = isWeekday && hour >= 8 && hour < 17;
       statusBadge.classList.toggle('is-offline', !isOpen);
       statusBadge.querySelector('.status-text').textContent = isOpen
-        ? 'Disponibil acum pentru consultații'
+        ? 'Disponibilă acum pentru consultații'
         : 'În afara programului de lucru';
     } catch (err) {
       statusBadge.remove();
@@ -951,8 +999,9 @@ if (!location.hash) window.scrollTo(0, 0);
     flowFill.style.height = flow.getBoundingClientRect().height + 'px';
     flowNodes.forEach(node => node.classList.add('filled'));
   }
+  let flowInView = false;
   const updateFlowFill = () => {
-    if (!flow || !flowFill || reduce) return;
+    if (!flow || !flowFill || reduce || !flowInView) return;
     const rect = flow.getBoundingClientRect();
     const readLine = window.innerHeight * 0.6;
     const pct = Math.max(0, Math.min(1, (readLine - rect.top) / rect.height));
@@ -963,6 +1012,15 @@ if (!location.hash) window.scrollTo(0, 0);
       node.classList.toggle('filled', nodeTop <= fillPx);
     });
   };
+  if (flow && flowFill && !reduce) {
+    /* Only recompute the timeline fill while the section is near the viewport —
+       skips the getBoundingClientRect reads on every scroll frame elsewhere on the page. */
+    const flowObs = new IntersectionObserver(([entry]) => {
+      flowInView = entry.isIntersecting;
+      if (flowInView) updateFlowFill();
+    }, { rootMargin: '100% 0px 100% 0px', threshold: 0 });
+    flowObs.observe(flow);
+  }
 
   const onScroll = () => {
     const y = window.scrollY;

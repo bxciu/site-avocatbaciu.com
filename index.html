@@ -43,12 +43,22 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@graph": [
+  {
+    "@type": "WebSite",
+    "@id": "https://www.avocatbaciu.com/#website",
+    "url": "https://www.avocatbaciu.com/",
+    "name": "Cabinet Avocat Simona Maria Baciu",
+    "inLanguage": "ro-RO",
+    "publisher": {"@id": "https://www.avocatbaciu.com/#legal-service"}
+  },
+  {
   "@type": "LegalService",
   "@id": "https://www.avocatbaciu.com/#legal-service",
   "name": "Cabinet Individual de Avocatură Simona Maria Baciu",
   "legalName": "Cabinet Individual de Avocatură Simona Maria Baciu",
   "description": "Cabinet avocat specializat în drept civil și comercial în Turda. Consultanță juridică, succesiuni, carte funciară, litigii civile și comerciale.",
-  "url": "https://www.avocatbaciu.com",
+  "url": "https://www.avocatbaciu.com/",
   "image": "https://www.avocatbaciu.com/assets/images/og-twitter-card.jpeg",
   "telephone": "+40744476674",
   "email": "avocatbaciu@yahoo.com",
@@ -65,18 +75,24 @@
     "latitude": 46.5693,
     "longitude": 23.7884
   },
+  "hasMap": "https://www.google.com/maps/search/?api=1&query=Str.+Avram+Iancu+nr.+7,+Turda,+Cluj,+Romania",
   "areaServed": [
     {"@type": "City", "name": "Turda"},
     {"@type": "City", "name": "Cluj-Napoca"},
     {"@type": "AdministrativeArea", "name": "județul Cluj"}
   ],
   "priceRange": "$$",
-  "openingHours": ["Mo-Fr 08:00-17:00"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }
+  ],
   "sameAs": ["https://www.baroul-cluj.ro/tabloul-avocatilor/avocati-definitivi/"],
-  "founder": {
-    "@type": "Person",
-    "name": "Simona Maria Baciu"
-  },
+  "founder": {"@id": "https://www.avocatbaciu.com/#person"},
+  "employee": {"@id": "https://www.avocatbaciu.com/#person"},
   "knowsAbout": [
     "Drept Civil",
     "Drept Comercial",
@@ -94,24 +110,18 @@
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Litigii și tranzacții comerciale"}}
     ]
   }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
+  },
+  {
   "@type": "Person",
   "@id": "https://www.avocatbaciu.com/#person",
   "name": "Simona Maria Baciu",
   "jobTitle": "Avocat Definitiv",
   "description": "Avocat definitiv membră a Baroului Cluj din 1 martie 2003, cu peste 23 de ani de experiență în drept civil și comercial.",
-  "url": "https://www.avocatbaciu.com",
+  "url": "https://www.avocatbaciu.com/",
   "image": "https://www.avocatbaciu.com/assets/images/og-twitter-card.jpeg",
   "telephone": "+40744476674",
   "email": "avocatbaciu@yahoo.com",
-  "worksFor": {
-    "@type": "LegalService",
-    "name": "Cabinet Individual de Avocatură Simona Maria Baciu"
-  },
+  "worksFor": {"@id": "https://www.avocatbaciu.com/#legal-service"},
   "memberOf": {
     "@type": "Organization",
     "name": "Baroul Cluj",
@@ -125,13 +135,14 @@
     "Litigii Civile"
   ],
   "sameAs": ["https://www.baroul-cluj.ro/tabloul-avocatilor/avocati-definitivi/"]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
+  },
+  {
   "@type": "FAQPage",
   "@id": "https://www.avocatbaciu.com/#faq",
+  "url": "https://www.avocatbaciu.com/",
+  "inLanguage": "ro-RO",
+  "isPartOf": {"@id": "https://www.avocatbaciu.com/#website"},
+  "about": {"@id": "https://www.avocatbaciu.com/#legal-service"},
   "mainEntity": [
     {
       "@type": "Question",
@@ -165,6 +176,8 @@
         "text": "Da. Consultanța preliminară se poate acorda prin telefon sau e-mail. Pentru reprezentarea în instanță și pentru semnarea documentelor, întâlnirea față în față rămâne necesară."
       }
     }
+  ]
+  }
   ]
 }
 </script>
